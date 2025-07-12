@@ -1,15 +1,21 @@
-# Ignore everything
-*
+# Development files
+.idea
+node_modules
+vendor
+mix-manifest.json
+mix-manifest.php
+package-lock.json
+composer.lock
 
-# Except these
-!.gitignore
+# WordPress core files
+wp-admin/
+wp-includes/
+wp-*.php
+xmlrpc.php
+license.txt
+readme.html
+index.php
+
+# Exceptions - include these files
 !wp-content/
-wp-content/*
-!wp-content/themes/
-!wp-content/themes/borsh/
-!wp-content/plugins/
-!wp-content/uploads/
-
-# Node and Composer dependencies
-node_modules/
-vendor/
+!wp-content/**
