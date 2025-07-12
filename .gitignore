@@ -6,16 +6,4 @@ mix-manifest.json
 mix-manifest.php
 package-lock.json
 composer.lock
-
-# WordPress core files
-wp-admin/
-wp-includes/
-wp-*.php
-xmlrpc.php
-license.txt
-readme.html
-index.php
-
-# Exceptions - include these files
-!wp-content/
-!wp-content/**
+wp-content/uploads
