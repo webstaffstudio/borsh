@@ -56,7 +56,8 @@ $logo_bottom = get_field('welcome_logo_bottom');
                                 </h1>
                             <?php endif; ?>
                             <?php if ($button): ?>
-                                <a class="b-btn" href="<?php echo $button['url']; ?>" target="<?php echo $button['target'] ?: '_self'; ?>">
+                                <a class="b-btn" href="<?php echo $button['url']; ?>"
+                                   target="<?php echo $button['target'] ?: '_self'; ?>">
                                     <?php echo $button['title']; ?>
                                 </a>
                             <?php endif; ?>
@@ -69,12 +70,20 @@ $logo_bottom = get_field('welcome_logo_bottom');
                         ?>
                         <?php if ($bottom_img_url): ?>
                             <div class="welcome__logo-bottom">
-                                <img src="<?php echo $bottom_img_url; ?>" alt="<?php echo $bottom_img_alt; ?>" loading="lazy">
+                                <img src="<?php echo $bottom_img_url; ?>" alt="<?php echo $bottom_img_alt; ?>"
+                                     loading="lazy">
                             </div>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
-
+            </div>
+            <div class="vega-anim">
+                <div class="vega-anim__desktop">
+                    <?php echo inline_svg('vega-desktop/б.svg','letter-1'); ?>
+                    <?php echo inline_svg('vega-desktop/о.svg','letter-2'); ?>
+                    <?php echo inline_svg('vega-desktop/р.svg','letter-3'); ?>
+                    <?php echo inline_svg('vega-desktop/ш.svg','letter-4'); ?>
+                </div>
             </div>
         </div>
     </section>
