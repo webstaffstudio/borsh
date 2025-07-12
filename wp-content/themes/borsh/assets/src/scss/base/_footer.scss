@@ -1,0 +1,36 @@
+.footer {
+  @media (min-width: 1400px) {
+    &__bot .container {
+      max-width: 1600px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    &__info {
+      max-width: fit-content;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__top .container {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 992px) {
+    &__bot .container,
+    &__logo {
+      justify-content: center;
+    }
+
+    &__title,
+    &__info {
+      text-align: center;
+    }
+
+    &__bot img {
+      margin: 0 auto;
+    }
+  }
+}
+

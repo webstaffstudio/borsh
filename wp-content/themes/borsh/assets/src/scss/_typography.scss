@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /*******************************************************************
 	Table of contents:
 
@@ -30,10 +32,6 @@ body {
   box-shadow: none;
 }
 
-.h-100 {
-  height: 100%;
-}
-
 .responsive-table {
   overflow-x: auto;
 }
@@ -43,7 +41,6 @@ img {
   object-fit: cover;
   overflow: hidden;
 }
-
 
 /**
 	-----------------------------------------------------------------
@@ -191,3 +188,206 @@ iframe {
   width: 100%;
   height: 100%;
 }
+
+/**
+	-----------------------------------------------------------------
+	GlobalClasses
+	-----------------------------------------------------------------
+**/
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-max {
+  width: max-content;
+}
+
+.mw100 {
+  max-width: 100%;
+}
+
+.lh-normal {
+  line-height: normal;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.img-cover {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.d-inlineb {
+  display: inline-block;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.fd-c {
+  flex-direction: column;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-se {
+  justify-content: space-evenly;
+}
+
+.fw-wrap {
+  flex-wrap: wrap;
+}
+
+/**
+	-----------------------------------------------------------------
+	UtilityClasses
+	-----------------------------------------------------------------
+**/
+$max-width: 128, 300, 320, 325, 350, 369, 400, 425, 435, 450, 500, 550, 600, 650, 700, 750, 800, 900, 1000, 1100, 1200, 1300, 1400, 1450, 1500, 1600;
+$spacings: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 47, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 140, 160, 250;
+$font-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+$font-size: 10, 13, 14, 15, 18, 19, 20, 23, 24, 36, 40;
+$transition: 1, 2, 3, 4, 5;
+$breakpoints: (
+        sl: 0,
+        sm: 576px,
+        md: 768px,
+        ls: 992px,
+        lg: 1024px,
+        xl: 1200px
+);
+$colors: (
+        'white': #FFFFFF,
+        'black': #000000,
+        'red': #FF675F,
+        'blue': #5F5BDF,
+        'chamois': #F0D8BC,
+);
+
+@each $value in $spacings {
+  .m-#{$value}   { margin: #{$value}px; }
+  .mt-#{$value}  { margin-top: #{$value}px; }
+  .mr-#{$value}  { margin-right: #{$value}px; }
+  .mb-#{$value}  { margin-bottom: #{$value}px; }
+  .ml-#{$value}  { margin-left: #{$value}px; }
+  .mx-#{$value}  { margin-left: #{$value}px; margin-right: #{$value}px; }
+  .my-#{$value}  { margin-top: #{$value}px; margin-bottom: #{$value}px; }
+
+  .p-#{$value}   { padding: #{$value}px; }
+  .pt-#{$value}  { padding-top: #{$value}px; }
+  .pr-#{$value}  { padding-right: #{$value}px; }
+  .pb-#{$value}  { padding-bottom: #{$value}px; }
+  .pl-#{$value}  { padding-left: #{$value}px; }
+  .px-#{$value}  { padding-left: #{$value}px; padding-right: #{$value}px; }
+  .py-#{$value}  { padding-top: #{$value}px; padding-bottom: #{$value}px; }
+
+  .gap-#{$value} { gap: #{$value}px; }
+
+  .radius-#{$value} { border-radius: #{$value}px; }
+}
+
+@each $value in $font-weights {
+  .fw-#{$value} { font-weight: $value; }
+}
+
+@each $value in $font-size {
+  .fs-#{$value} { font-size: #{$value}px; }
+}
+
+@each $value in $max-width {
+  .mw-#{$value} { max-width: #{$value}px; }
+}
+
+@each $value in $transition {
+  .transition-#{$value} { transition: all #{math.div($value, 10)}s ease-in-out; }
+}
+
+@each $value in $transition {
+  .b-lh-#{$value} {
+    line-height: 1 + math.div($value, 10);
+  }
+}
+
+@each $name, $value in $colors {
+  .color-#{$name} {
+    color: $value;
+  }
+  .bg-#{$name} {
+    background-color: $value;
+  }
+}
+
+
+// Responsive versions (for example .mb-20@md)
+@each $breakpoint, $breakpoint-size in $breakpoints {
+  @media (min-width: #{$breakpoint-size}) {
+    @each $value in $spacings {
+      .m-#{$value}\@#{$breakpoint}   { margin: #{$value}px; }
+      .mt-#{$value}\@#{$breakpoint}  { margin-top: #{$value}px; }
+      .mr-#{$value}\@#{$breakpoint}  { margin-right: #{$value}px; }
+      .mb-#{$value}\@#{$breakpoint}  { margin-bottom: #{$value}px; }
+      .ml-#{$value}\@#{$breakpoint}  { margin-left: #{$value}px; }
+      .mx-#{$value}\@#{$breakpoint}  { margin-left: #{$value}px; margin-right: #{$value}px; }
+      .my-#{$value}\@#{$breakpoint}  { margin-top: #{$value}px; margin-bottom: #{$value}px; }
+
+      .p-#{$value}\@#{$breakpoint}   { padding: #{$value}px; }
+      .pt-#{$value}\@#{$breakpoint}  { padding-top: #{$value}px; }
+      .pr-#{$value}\@#{$breakpoint}  { padding-right: #{$value}px; }
+      .pb-#{$value}\@#{$breakpoint}  { padding-bottom: #{$value}px; }
+      .pl-#{$value}\@#{$breakpoint}  { padding-left: #{$value}px; }
+      .px-#{$value}\@#{$breakpoint}  { padding-left: #{$value}px; padding-right: #{$value}px; }
+      .py-#{$value}\@#{$breakpoint}  { padding-top: #{$value}px; padding-bottom: #{$value}px; }
+
+      .gap-#{$value}\@#{$breakpoint} { gap: #{$value}px; }
+
+      .radius-#{$value}\@#{$breakpoint} { border-radius: #{$value}px; }
+    }
+
+    @each $value in $font-weights {
+      .fw-#{$value}\@#{$breakpoint} { font-weight: $value; }
+    }
+
+    @each $value in $max-width {
+      .mw-#{$value}\@#{$breakpoint} { max-width: #{$value}px; }
+    }
+
+    .mw100\@#{$breakpoint} { max-width: 100%; }
+
+    .text-center\@#{$breakpoint} { text-align: center; }
+
+    .text-left\@#{$breakpoint} { text-align: left; }
+
+    .mx-auto\@#{$breakpoint} { margin: 0 auto }
+  }
+}
+
+// How to use:
+// .mb-20      margin-bottom: 20px;
+// .p-10       padding: 10px;
+// .mt-30@md   @media (min-width: 768px) { margin-top: 30px; }
+// .gap-15@lg  @media (min-width: 992px) { gap: 15px; }
+// .radius-10  border-radius: 10px;
+// .fw-100     font-weight: 100
