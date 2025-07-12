@@ -7,3 +7,5 @@ mix-manifest.php
 package-lock.json
 composer.lock
 wp-content/uploads
+wp-admin
+wp-includes

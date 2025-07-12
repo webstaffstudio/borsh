@@ -1,0 +1,14 @@
+[12-Jul-2025 09:42:03 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "plugin" in E:\Local site\borsh\app\public\wp-admin\includes\plugin.php:151
+Stack trace:
+#0 E:\Local site\borsh\app\public\wp-admin\includes\class-wp-plugins-list-table.php(323): _get_plugin_data_markup_translate('advanced-custom...', Array, false, true)
+#1 E:\Local site\borsh\app\public\wp-admin\plugins.php(553): WP_Plugins_List_Table->prepare_items()
+#2 {main}
+  thrown in E:\Local site\borsh\app\public\wp-admin\includes\plugin.php on line 151
+[12-Jul-2025 09:42:04 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "plugin" in E:\Local site\borsh\app\public\wp-admin\includes\plugin.php:151
+Stack trace:
+#0 E:\Local site\borsh\app\public\wp-admin\includes\class-wp-plugins-list-table.php(323): _get_plugin_data_markup_translate('advanced-custom...', Array, false, true)
+#1 E:\Local site\borsh\app\public\wp-admin\plugins.php(553): WP_Plugins_List_Table->prepare_items()
+#2 {main}
+  thrown in E:\Local site\borsh\app\public\wp-admin\includes\plugin.php on line 151
+[12-Jul-2025 09:49:05 UTC] Automatic updates starting...
+[12-Jul-2025 09:49:05 UTC] Automatic updates complete.
