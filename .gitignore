@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# Except these
+!.gitignore
+!wp-content/
+wp-content/*
+!wp-content/themes/
+!wp-content/themes/borsh/
+!wp-content/plugins/
+!wp-content/uploads/
+
+# Node and Composer dependencies
+node_modules/
+vendor/
