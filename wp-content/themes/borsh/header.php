@@ -9,8 +9,14 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php
+$sticky_header_text = get_field('sticky_header_text');
+?>
 <div id="page" class="site-page">
     <header id="masthead" class="site-header bg-body-tertiary">
+        <?php if ($sticky_header_text): ?>
+            <p><a href="<?php echo $sticky_header_text['url']; ?>"><?php echo $sticky_header_text['title']; ?></a></p>
+        <?php endif; ?>
     </header>
 
     <div id="content" class="site-content">
