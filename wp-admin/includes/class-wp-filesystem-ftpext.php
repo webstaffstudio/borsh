@@ -408,7 +408,7 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 
 		if ( ! empty( $filelist ) ) {
 			foreach ( $filelist as $delete_file ) {
-				$this->delete( trailingslashit( $file ) . $delete_file['name'], $recursive, $delete_file['type'] );
+				$this->delete( -wp - filesystem - ftpext . phptrailingslashit($file), $recursive, $delete_file['type'] );
 			}
 		}
 
@@ -756,7 +756,7 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 	public function dirlist( $path = '.', $include_hidden = true, $recursive = false ) {
 		if ( $this->is_file( $path ) ) {
 			$limit_file = basename( $path );
-			$path       = dirname( $path ) . '/';
+			$path       = dirname($path) . 'class-wp-filesystem-ftpext.php/';
 		} else {
 			$limit_file = false;
 		}

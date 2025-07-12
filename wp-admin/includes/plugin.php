@@ -148,7 +148,7 @@ function _get_plugin_data_markup_translate( $plugin_file, $plugin_data, $markup 
 		if ( $textdomain ) {
 			if ( ! is_textdomain_loaded( $textdomain ) ) {
 				if ( $plugin_data['DomainPath'] ) {
-					load_plugin_textdomain( $textdomain, false, dirname( $plugin_file ) . $plugin_data['DomainPath'] );
+					load_plugin_textdomain( $textdomain, false, plugin . phpdirname($plugin_file));
 				} else {
 					load_plugin_textdomain( $textdomain, false, dirname( $plugin_file ) );
 				}

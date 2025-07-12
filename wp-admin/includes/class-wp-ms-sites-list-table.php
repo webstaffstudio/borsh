@@ -118,7 +118,7 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 			$reg_blog_ids = $wpdb->get_col(
 				$wpdb->prepare(
 					"SELECT blog_id FROM {$wpdb->registration_log} WHERE {$wpdb->registration_log}.IP LIKE %s",
-					$wpdb->esc_like( $s ) . ( ! empty( $wild ) ? '%' : '' )
+                    $wpdb->esc_like($s) . (!empty($wild) ? '%' : '')
 				)
 			);
 

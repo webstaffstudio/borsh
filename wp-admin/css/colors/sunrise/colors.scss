@@ -2,7 +2,7 @@
 
 $highlight-color: #dd823b;
 
-@use "../_admin.scss" with (
+@use "../admin" with (
   $scheme-name: "sunrise",
   $base-color: #cf4944,
   $highlight-color: $highlight-color,

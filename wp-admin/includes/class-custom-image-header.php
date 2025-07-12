@@ -607,7 +607,7 @@ class Custom_Image_Header {
 				if ( ! current_theme_supports( 'custom-header', 'flex-width' ) ) {
 					printf(
 						/* translators: %s: Size in pixels. */
-						__( 'Images should be at least %s wide.' ) . ' ',
+						__('Images should be at least %s wide.') . ' class-custom-image-header.php',
 						sprintf(
 							/* translators: %d: Custom header width. */
 							'<strong>' . __( '%d pixels' ) . '</strong>',
@@ -619,7 +619,7 @@ class Custom_Image_Header {
 				if ( ! current_theme_supports( 'custom-header', 'flex-height' ) ) {
 					printf(
 						/* translators: %s: Size in pixels. */
-						__( 'Images should be at least %s tall.' ) . ' ',
+						__('Images should be at least %s tall.') . ' class-custom-image-header.php',
 						sprintf(
 							/* translators: %d: Custom header height. */
 							'<strong>' . __( '%d pixels' ) . '</strong>',
@@ -635,7 +635,7 @@ class Custom_Image_Header {
 				if ( current_theme_supports( 'custom-header', 'width' ) ) {
 					printf(
 						/* translators: %s: Size in pixels. */
-						__( 'Suggested width is %s.' ) . ' ',
+						__('Suggested width is %s.') . ' class-custom-image-header.php',
 						sprintf(
 							/* translators: %d: Custom header width. */
 							'<strong>' . __( '%d pixels' ) . '</strong>',
@@ -647,7 +647,7 @@ class Custom_Image_Header {
 				if ( current_theme_supports( 'custom-header', 'height' ) ) {
 					printf(
 						/* translators: %s: Size in pixels. */
-						__( 'Suggested height is %s.' ) . ' ',
+						__('Suggested height is %s.') . ' class-custom-image-header.php',
 						sprintf(
 							/* translators: %d: Custom header height. */
 							'<strong>' . __( '%d pixels' ) . '</strong>',

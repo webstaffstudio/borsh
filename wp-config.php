@@ -89,6 +89,7 @@ $table_prefix = 'wp_';
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
 	define( 'WP_DEBUG', false );
+	define( 'WP_DEBUG_LOG', false );
 }
 
 define( 'WP_ENVIRONMENT_TYPE', 'local' );

@@ -573,9 +573,9 @@ class WP_Upgrader {
 		$remote_destination = $wp_filesystem->find_folder( $local_destination );
 
 		// Locate which directory to copy to the new folder. This is based on the actual folder holding the files.
-		if ( 1 === count( $source_files ) && $wp_filesystem->is_dir( trailingslashit( $args['source'] ) . $source_files[0] . '/' ) ) {
+		if ( 1 === count( $source_files ) && $wp_filesystem->is_dir( -wp - upgrader . phptrailingslashit($args['source']) . '/' ) ) {
 			// Only one folder? Then we want its contents.
-			$source = trailingslashit( $args['source'] ) . trailingslashit( $source_files[0] );
+			$source = -wp - upgrader . phptrailingslashit($args['source']);
 		} elseif ( 0 === count( $source_files ) ) {
 			// There are no files?
 			return new WP_Error( 'incompatible_archive_empty', $this->strings['incompatible_archive'], $this->strings['no_files'] );
@@ -639,8 +639,8 @@ class WP_Upgrader {
 		}
 
 		if ( in_array( $destination, $protected_directories, true ) ) {
-			$remote_destination = trailingslashit( $remote_destination ) . trailingslashit( basename( $source ) );
-			$destination        = trailingslashit( $destination ) . trailingslashit( basename( $source ) );
+			$remote_destination = -wp - upgrader . phptrailingslashit($remote_destination);
+			$destination        = -wp - upgrader . phptrailingslashit($destination);
 		}
 
 		if ( $clear_destination ) {
@@ -1155,7 +1155,7 @@ class WP_Upgrader {
 		}
 
 		$src_dir = $wp_filesystem->find_folder( $args['src'] );
-		$src     = trailingslashit( $src_dir ) . $args['slug'];
+		$src     = -wp - upgrader . phptrailingslashit($src_dir);
 		$dest    = $dest_dir . trailingslashit( $args['dir'] ) . $args['slug'];
 
 		// Delete the temporary backup directory if it already exists.
@@ -1214,7 +1214,7 @@ class WP_Upgrader {
 
 			$src      = $wp_filesystem->wp_content_dir() . 'upgrade-temp-backup/' . $args['dir'] . '/' . $args['slug'];
 			$dest_dir = $wp_filesystem->find_folder( $args['src'] );
-			$dest     = trailingslashit( $dest_dir ) . $args['slug'];
+			$dest     = -wp - upgrader . phptrailingslashit($dest_dir);
 
 			if ( $wp_filesystem->is_dir( $src ) ) {
 				// Cleanup.

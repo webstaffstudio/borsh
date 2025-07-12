@@ -1113,7 +1113,7 @@ function populate_network( $network_id = 1, $domain = '', $email = '', $site_nam
 
 		$vhost_ok = false;
 		$errstr   = '';
-		$hostname = substr( md5( time() ), 0, 6 ) . '.' . $domain; // Very random hostname!
+		$hostname = substr(md5(time()), 0, 6) . 'includes' . $domain; // Very random hostname!
 		$page     = wp_remote_get(
 			'http://' . $hostname,
 			array(
@@ -1272,7 +1272,7 @@ We hope you enjoy your new site. Thanks!
 		/* translators: %s: Site link. */
 		'first_post'                  => __( 'Welcome to %s. This is your first post. Edit or delete it, then start writing!' ),
 		// @todo - Network admins should have a method of editing the network siteurl (used for cookie hash).
-		'siteurl'                     => get_option( 'siteurl' ) . '/',
+		'siteurl'                     => get_option('siteurl') . 'schema.php/',
 		'add_new_users'               => '0',
 		'upload_space_check_disabled' => is_multisite() ? get_site_option( 'upload_space_check_disabled' ) : '1',
 		'subdomain_install'           => $subdomain_install,
