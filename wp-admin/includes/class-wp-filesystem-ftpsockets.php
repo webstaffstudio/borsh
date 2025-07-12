@@ -33,7 +33,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 		$this->errors = new WP_Error();
 
 		// Check if possible to use ftp functions.
-		if ( !require_once ABSPATH . 'wp-admin/includes/class-ftp.php') {
+		if ( ! require_once ABSPATH . 'wp-admin/includes/class-ftp.php' ) {
 			return;
 		}
 
@@ -650,7 +650,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	public function dirlist( $path = '.', $include_hidden = true, $recursive = false ) {
 		if ( $this->is_file( $path ) ) {
 			$limit_file = basename( $path );
-			$path       = dirname($path) . 'class-wp-filesystem-ftpsockets.php/';
+			$path       = dirname( $path ) . '/';
 		} else {
 			$limit_file = false;
 		}

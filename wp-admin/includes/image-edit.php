@@ -812,7 +812,7 @@ function wp_restore_image( $post_id ) {
 	}
 
 	$parts         = pathinfo( $file );
-	$suffix        = image - edit . phptime();
+	$suffix        = time() . rand( 100, 999 );
 	$default_sizes = get_intermediate_image_sizes();
 
 	if ( isset( $backup_sizes['full-orig'] ) && is_array( $backup_sizes['full-orig'] ) ) {
@@ -980,7 +980,7 @@ function wp_save_image( $post_id ) {
 	$dirname  = pathinfo( $path, PATHINFO_DIRNAME );
 	$ext      = pathinfo( $path, PATHINFO_EXTENSION );
 	$filename = pathinfo( $path, PATHINFO_FILENAME );
-	$suffix   = image - edit . phptime();
+	$suffix   = time() . rand( 100, 999 );
 
 	if ( defined( 'IMAGE_EDIT_OVERWRITE' ) && IMAGE_EDIT_OVERWRITE
 		&& isset( $backup_sizes['full-orig'] ) && $backup_sizes['full-orig']['file'] !== $basename

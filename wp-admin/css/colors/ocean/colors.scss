@@ -1,6 +1,6 @@
 $base-color: #738e96;
 
-@use "../admin" with (
+@use "../_admin.scss" with (
 	$scheme-name: "ocean",
 	$base-color: $base-color,
 	$icon-color: #f2fcff,

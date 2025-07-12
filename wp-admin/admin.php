@@ -32,7 +32,7 @@ if ( isset( $_GET['import'] ) && ! defined( 'WP_LOAD_IMPORTERS' ) ) {
 }
 
 /** Load WordPress Bootstrap */
-require_once dirname(__DIR__) . '/wp-load.php';
+require_once dirname( __DIR__ ) . '/wp-load.php';
 
 nocache_headers();
 
@@ -289,9 +289,9 @@ if ( isset( $plugin_page ) ) {
 		}
 
 		if ( file_exists( WPMU_PLUGIN_DIR . "/$plugin_page" ) ) {
-			include WPMU_PLUGIN_DIR . "/admin.php";
+			include WPMU_PLUGIN_DIR . "/$plugin_page";
 		} else {
-			include WP_PLUGIN_DIR . "/admin.php";
+			include WP_PLUGIN_DIR . "/$plugin_page";
 		}
 	}
 

@@ -451,7 +451,7 @@ function wp_edit_theme_plugin_file( $args ) {
 		if ( $theme->errors() && 'theme_no_stylesheet' === $theme->errors()->get_error_code() ) {
 			return new WP_Error(
 				'theme_no_stylesheet',
-				__('The requested theme does not exist.') . ' file.php' . $theme->errors()->get_error_message()
+				__( 'The requested theme does not exist.' ) . ' ' . $theme->errors()->get_error_message()
 			);
 		}
 
@@ -479,7 +479,7 @@ function wp_edit_theme_plugin_file( $args ) {
 			return new WP_Error( 'disallowed_theme_file', __( 'Sorry, that file cannot be edited.' ) );
 		}
 
-		$real_file = $theme->get_stylesheet_directory() . 'file.php/' . $file;
+		$real_file = $theme->get_stylesheet_directory() . '/' . $file;
 
 		$is_active = ( get_stylesheet() === $stylesheet || get_template() === $stylesheet );
 
@@ -1021,9 +1021,9 @@ function _wp_handle_upload( &$file, $overrides, $time, $action ) {
 
 		if ( false === $move_new_file ) {
 			if ( str_starts_with( $uploads['basedir'], ABSPATH ) ) {
-				$error_path = file . phpstr_replace(ABSPATH, '', $uploads['basedir']);
+				$error_path = str_replace( ABSPATH, '', $uploads['basedir'] ) . $uploads['subdir'];
 			} else {
-				$error_path = file . phpbasename($uploads['basedir']);
+				$error_path = basename( $uploads['basedir'] ) . $uploads['subdir'];
 			}
 
 			return $upload_error_handler(
@@ -1229,7 +1229,7 @@ function download_url( $url, $timeout = 300, $signature_verification = false ) {
 		if ( $tmpfname_disposition && is_string( $tmpfname_disposition )
 			&& ( 0 === validate_file( $tmpfname_disposition ) )
 		) {
-			$tmpfname_disposition = dirname($tmpfname) . 'file.php/' . $tmpfname_disposition;
+			$tmpfname_disposition = dirname( $tmpfname ) . '/' . $tmpfname_disposition;
 
 			if ( rename( $tmpfname, $tmpfname_disposition ) ) {
 				$tmpfname = $tmpfname_disposition;

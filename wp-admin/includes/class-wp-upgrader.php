@@ -573,9 +573,9 @@ class WP_Upgrader {
 		$remote_destination = $wp_filesystem->find_folder( $local_destination );
 
 		// Locate which directory to copy to the new folder. This is based on the actual folder holding the files.
-		if ( 1 === count( $source_files ) && $wp_filesystem->is_dir( -wp - upgrader . phptrailingslashit($args['source']) . '/' ) ) {
+		if ( 1 === count( $source_files ) && $wp_filesystem->is_dir( trailingslashit( $args['source'] ) . $source_files[0] . '/' ) ) {
 			// Only one folder? Then we want its contents.
-			$source = -wp - upgrader . phptrailingslashit($args['source']);
+			$source = trailingslashit( $args['source'] ) . trailingslashit( $source_files[0] );
 		} elseif ( 0 === count( $source_files ) ) {
 			// There are no files?
 			return new WP_Error( 'incompatible_archive_empty', $this->strings['incompatible_archive'], $this->strings['no_files'] );
@@ -639,8 +639,8 @@ class WP_Upgrader {
 		}
 
 		if ( in_array( $destination, $protected_directories, true ) ) {
-			$remote_destination = -wp - upgrader . phptrailingslashit($remote_destination);
-			$destination        = -wp - upgrader . phptrailingslashit($destination);
+			$remote_destination = trailingslashit( $remote_destination ) . trailingslashit( basename( $source ) );
+			$destination        = trailingslashit( $destination ) . trailingslashit( basename( $source ) );
 		}
 
 		if ( $clear_destination ) {
@@ -1008,18 +1008,8 @@ class WP_Upgrader {
 		global $wp_filesystem;
 
 		if ( ! $wp_filesystem ) {
-			if ( ! function_exists( 'WP_Filesystem' ) ) {
-				require_once ABSPATH . 'wp-admin/includes/file.php';
-			}
-
-			ob_start();
-			$credentials = request_filesystem_credentials( '' );
-			ob_end_clean();
-
-			if ( false === $credentials || ! WP_Filesystem( $credentials ) ) {
-				wp_trigger_error( __FUNCTION__, __( 'Could not access filesystem.' ) );
-				return;
-			}
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+			WP_Filesystem();
 		}
 
 		$file = $wp_filesystem->abspath() . '.maintenance';
@@ -1155,7 +1145,7 @@ class WP_Upgrader {
 		}
 
 		$src_dir = $wp_filesystem->find_folder( $args['src'] );
-		$src     = -wp - upgrader . phptrailingslashit($src_dir);
+		$src     = trailingslashit( $src_dir ) . $args['slug'];
 		$dest    = $dest_dir . trailingslashit( $args['dir'] ) . $args['slug'];
 
 		// Delete the temporary backup directory if it already exists.
@@ -1214,7 +1204,7 @@ class WP_Upgrader {
 
 			$src      = $wp_filesystem->wp_content_dir() . 'upgrade-temp-backup/' . $args['dir'] . '/' . $args['slug'];
 			$dest_dir = $wp_filesystem->find_folder( $args['src'] );
-			$dest     = -wp - upgrader . phptrailingslashit($dest_dir);
+			$dest     = trailingslashit( $dest_dir ) . $args['slug'];
 
 			if ( $wp_filesystem->is_dir( $src ) ) {
 				// Cleanup.

@@ -2416,7 +2416,7 @@ class WP_Site_Health {
 				$page_cache_detail->get_error_message(),
 				$page_cache_detail->get_error_code()
 			);
-			$result['description'] = -wp - site - health . phpwp_kses_post("<p>$error_info</p>");
+			$result['description'] = wp_kses_post( "<p>$error_info</p>" ) . $result['description'];
 			return $result;
 		}
 

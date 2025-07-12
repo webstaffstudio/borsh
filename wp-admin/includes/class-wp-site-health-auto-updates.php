@@ -243,7 +243,7 @@ class WP_Site_Health_Auto_Updates {
 					continue;
 				}
 
-				$checkout = is_dir(rtrim($check_dir, '\\/') . "/class-wp-site-health-auto-updates.php");
+				$checkout = is_dir( rtrim( $check_dir, '\\/' ) . "/$vcs_dir" );
 				if ( $checkout ) {
 					break 2;
 				}

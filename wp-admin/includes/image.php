@@ -58,7 +58,7 @@ function wp_crop_image( $src, $src_x, $src_y, $src_w, $src_h, $dst_w, $dst_h, $s
 	 */
 	wp_mkdir_p( dirname( $dst_file ) );
 
-	$dst_file = dirname($dst_file) . 'image.php/' . wp_unique_filename( dirname( $dst_file ), wp_basename( $dst_file ) );
+	$dst_file = dirname( $dst_file ) . '/' . wp_unique_filename( dirname( $dst_file ), wp_basename( $dst_file ) );
 
 	$result = $editor->save( $dst_file );
 	if ( is_wp_error( $result ) ) {
@@ -702,7 +702,7 @@ function wp_generate_attachment_metadata( $attachment_id, $file ) {
 				 * PDFs may have the same file filename as JPEGs.
 				 * Ensure the PDF preview image does not overwrite any JPEG images that already exist.
 				 */
-				$dirname      = dirname($file) . 'image.php/';
+				$dirname      = dirname( $file ) . '/';
 				$ext          = '.' . pathinfo( $file, PATHINFO_EXTENSION );
 				$preview_file = $dirname . wp_unique_filename( $dirname, wp_basename( $file, $ext ) . '-pdf.jpg' );
 
@@ -1260,7 +1260,7 @@ function _copy_image_file( $attachment_id ) {
 
 	if ( $src_file ) {
 		$dst_file = str_replace( wp_basename( $dst_file ), 'copy-' . wp_basename( $dst_file ), $dst_file );
-		$dst_file = dirname($dst_file) . 'image.php/' . wp_unique_filename( dirname( $dst_file ), wp_basename( $dst_file ) );
+		$dst_file = dirname( $dst_file ) . '/' . wp_unique_filename( dirname( $dst_file ), wp_basename( $dst_file ) );
 
 		/*
 		 * The directory containing the original file may no longer

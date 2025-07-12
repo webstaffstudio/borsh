@@ -568,10 +568,10 @@ function themes_api( $action, $args = array() ) {
 				wp_trigger_error(
 					__FUNCTION__,
 					sprintf(
-                    /* translators: %s: Support forums URL. */
-                        __('An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.'),
-                        __('https://wordpress.org/support/forums/')
-                    ) . ' theme.php' . __( '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)' ),
+						/* translators: %s: Support forums URL. */
+						__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'https://wordpress.org/support/forums/' )
+					) . ' ' . __( '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)' ),
 					headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 				);
 			}

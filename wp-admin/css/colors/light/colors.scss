@@ -4,7 +4,7 @@ $highlight-color: #04a4cc;
 $text-color: #333;
 $menu-avatar-frame: #aaa;
 
-@use "../admin" with (
+@use "../_admin.scss" with (
 	$scheme-name: "light",
 	$base-color: #e5e5e5,
 	$icon-color: #999,

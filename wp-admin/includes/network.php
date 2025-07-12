@@ -594,8 +594,8 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 	<?php
 	if ( iis7_supports_permalinks() ) :
 		// IIS doesn't support RewriteBase, all your RewriteBase are belong to us.
-		$iis_subdir_match       = network . phpltrim($base, '/');
-		$iis_rewrite_base       = network . phpltrim($base, '/');
+		$iis_subdir_match       = ltrim( $base, '/' ) . $subdir_match;
+		$iis_rewrite_base       = ltrim( $base, '/' ) . $rewrite_base;
 		$iis_subdir_replacement = $subdomain_install ? '' : '{R:1}';
 
 		$web_config_file = '<?xml version="1.0" encoding="UTF-8"?>

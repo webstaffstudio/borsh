@@ -157,7 +157,7 @@ class WP_Automatic_Updater {
 					continue;
 				}
 
-				$checkout = is_dir(rtrim($check_dir, '\\/') . "/class-wp-automatic-updater.php");
+				$checkout = is_dir( rtrim( $check_dir, '\\/' ) . "/$vcs_dir" );
 				if ( $checkout ) {
 					break 2;
 				}
@@ -981,7 +981,7 @@ class WP_Automatic_Updater {
 				);
 				$body .= "\n\n";
 				if ( ! $newer_version_available ) {
-					$body .= __('No further action is needed on your part.') . ' class-wp-automatic-updater.php';
+					$body .= __( 'No further action is needed on your part.' ) . ' ';
 				}
 
 				// Can only reference the About screen if their update was successful.
@@ -1015,7 +1015,7 @@ class WP_Automatic_Updater {
 				 * Potential for confusion, and also not useful for them to know at this point.
 				 */
 				if ( 'fail' === $type && ! $newer_version_available ) {
-					$body .= __('An attempt was made, but your site could not be updated automatically.') . ' class-wp-automatic-updater.php';
+					$body .= __( 'An attempt was made, but your site could not be updated automatically.' ) . ' ';
 				}
 
 				$body .= __( 'Updating is easy and only takes a few moments:' );

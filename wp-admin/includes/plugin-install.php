@@ -172,10 +172,10 @@ function plugins_api( $action, $args = array() ) {
 				wp_trigger_error(
 					__FUNCTION__,
 					sprintf(
-                    /* translators: %s: Support forums URL. */
-                        __('An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.'),
-                        __('https://wordpress.org/support/forums/')
-                    ) . ' plugin-install.php' . __( '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)' ),
+						/* translators: %s: Support forums URL. */
+						__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'https://wordpress.org/support/forums/' )
+					) . ' ' . __( '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)' ),
 					headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 				);
 			}
@@ -703,7 +703,7 @@ function install_plugin_information() {
 				?>
 				</li>
 			<?php } if ( ! empty( $api->slug ) && empty( $api->external ) ) { ?>
-				<li><a target="_blank" href="<?php echo esc_url(plugin - install . php__('https://wordpress.org/plugins/')); ?>/"><?php _e( 'WordPress.org Plugin Page &#187;' ); ?></a></li>
+				<li><a target="_blank" href="<?php echo esc_url( __( 'https://wordpress.org/plugins/' ) . $api->slug ); ?>/"><?php _e( 'WordPress.org Plugin Page &#187;' ); ?></a></li>
 			<?php } if ( ! empty( $api->homepage ) ) { ?>
 				<li><a target="_blank" href="<?php echo esc_url( $api->homepage ); ?>"><?php _e( 'Plugin Homepage &#187;' ); ?></a></li>
 			<?php } if ( ! empty( $api->donate_link ) && empty( $api->contributors ) ) { ?>
@@ -812,7 +812,11 @@ function install_plugin_information() {
 		$compatible_php_notice_message .= __( '<strong>Error:</strong> This plugin <strong>requires a newer version of PHP</strong>.' );
 
 		if ( current_user_can( 'update_php' ) ) {
-			$compatible_php_notice_message .= ' ' . __('<a href="%s" target="_blank">Click here to learn more about updating PHP</a>.');
+			$compatible_php_notice_message .= sprintf(
+				/* translators: %s: URL to Update PHP page. */
+				' ' . __( '<a href="%s" target="_blank">Click here to learn more about updating PHP</a>.' ),
+				esc_url( wp_get_update_php_url() )
+			) . wp_update_php_annotation( '</p><p><em>', '</em>', false );
 		} else {
 			$compatible_php_notice_message .= '</p>';
 		}
