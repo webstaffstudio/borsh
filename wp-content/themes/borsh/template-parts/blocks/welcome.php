@@ -47,42 +47,49 @@ $logo_bottom = get_field('welcome_logo_bottom');
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
-
-                    <?php if ($title || $button): ?>
-                        <div class="welcome__title-col">
-                            <?php if ($title): ?>
-                                <h1 class="welcome__title">
-                                    <?php echo $title; ?>
-                                </h1>
-                            <?php endif; ?>
-                            <?php if ($button): ?>
-                                <a class="b-btn" href="<?php echo $button['url']; ?>"
-                                   target="<?php echo $button['target'] ?: '_self'; ?>">
-                                    <?php echo $button['title']; ?>
-                                </a>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($logo_bottom): ?>
-                        <?php
-                        $bottom_img_url = $logo_bottom['sizes']['large'] ?? '';
-                        $bottom_img_alt = $logo_bottom['alt'] ?? $logo_bottom['title'] ?? '';
-                        ?>
-                        <?php if ($bottom_img_url): ?>
-                            <div class="welcome__logo-bottom">
-                                <img src="<?php echo $bottom_img_url; ?>" alt="<?php echo $bottom_img_alt; ?>"
-                                     loading="lazy">
+                    <div class="bottom-info">
+                        <?php if ($title || $button): ?>
+                            <div class="welcome__title-col">
+                                <?php if ($title): ?>
+                                    <h1 class="welcome__title">
+                                        <?php echo $title; ?>
+                                    </h1>
+                                <?php endif; ?>
+                                <?php if ($button): ?>
+                                    <a class="b-btn" href="<?php echo $button['url']; ?>"
+                                       target="<?php echo $button['target'] ?: '_self'; ?>">
+                                        <?php echo $button['title']; ?>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
-                    <?php endif; ?>
+                        <?php if ($logo_bottom): ?>
+                            <?php
+                            $bottom_img_url = $logo_bottom['sizes']['large'] ?? '';
+                            $bottom_img_alt = $logo_bottom['alt'] ?? $logo_bottom['title'] ?? '';
+                            ?>
+                            <?php if ($bottom_img_url): ?>
+                                <div class="welcome__logo-bottom">
+                                    <img src="<?php echo $bottom_img_url; ?>" alt="<?php echo $bottom_img_alt; ?>"
+                                         loading="lazy">
+                                </div>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
             <div class="vega-anim">
                 <div class="vega-anim__desktop">
-                    <?php echo inline_svg('vega-desktop/б.svg','letter-1'); ?>
-                    <?php echo inline_svg('vega-desktop/о.svg','letter-2'); ?>
-                    <?php echo inline_svg('vega-desktop/р.svg','letter-3'); ?>
-                    <?php echo inline_svg('vega-desktop/ш.svg','letter-4'); ?>
+                    <?php echo inline_svg('vega-desktop/fragment-1.svg', 'frag frag-1'); ?>
+                    <?php echo inline_svg('vega-desktop/fragment-2.svg', 'frag frag-2'); ?>
+                    <?php echo inline_svg('vega-desktop/fragment-3.svg', 'frag frag-3'); ?>
+                    <?php echo inline_svg('vega-desktop/б.svg', 'letter-1'); ?>
+                    <?php echo inline_svg('vega-desktop/о.svg', 'letter-2'); ?>
+                    <?php echo inline_svg('vega-desktop/р.svg', 'letter-3'); ?>
+                    <?php echo inline_svg('vega-desktop/ш.svg', 'letter-4'); ?>
+                </div>
+                <div class="vega-anim__mobile">
+                    <?php echo inline_svg('vega-desktop/vega-mobile.svg'); ?>
                 </div>
             </div>
         </div>

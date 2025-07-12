@@ -5,6 +5,10 @@
   color: #fff;
   font-weight: bold;
   position: relative;
+  overflow: hidden;
+  @include mq(0, 767) {
+    padding: 53px 0;
+  }
 
   .container {
     height: 100%;
@@ -17,6 +21,10 @@
     height: 100%;
     position: relative;
     z-index: 2;
+    @include mq(0, 767) {
+      flex-direction: column-reverse;
+      justify-content: end;
+    }
   }
 
   &__left-col {
@@ -25,34 +33,60 @@
     flex-direction: column;
   }
 
-  &__right-col {
-    display: flex;
-    justify-content: space-between;
-  }
-
 
   &__logos {
     display: flex;
     flex-direction: column;
     gap: 26px;
-    max-width: 150px;
     width: 100%;
+    align-items: end;
+
+    img {
+      max-width: 150px;
+    }
+
+    @include mq(0, 767) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 27px;
+      img {
+        margin-bottom: 10px;
+      }
+    }
   }
 
   &__right-col {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include mq(0, 767) {
+      align-items: baseline;
+      flex-direction: column-reverse;
+    }
+
+    .bottom-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 
   &__title-col {
     max-width: 300px;
     width: 100%;
-    position: relative;
-    right: 110px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 35px;
+    margin-right: 80px;
+    @include mq(0, 1399) {
+      margin-right: 34px;
+    }
+    @include mq(0, 991) {
+      margin-right: 0;
+    }
+
 
     .b-btn {
       display: flex;
@@ -65,11 +99,20 @@
       font-size: 36px;
       margin-top: 0;
       margin-bottom: 27px;
+      @include mq(0, 1199) {
+        font-size: 27px;
+      }
+      @include mq(0, 767) {
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__logo-bottom {
-
+    max-width: 150px;
+    @include mq(0, 767) {
+      display: none;
+    }
   }
 
   //vega elemetns
@@ -77,13 +120,165 @@
     position: absolute;
     top: 50%;
     right: 50%;
-    transform: translate(50%, -40%);
+    transform: translate(56%, -40%);
     z-index: 1;
+    max-width: 1090px;
+    width: 100%;
+    @include mq(0, 1399) {
+      max-width: 950px;
+    }
+    @include mq(0, 1199) {
+      max-width: 790px;
+    }
+    @include mq(0, 991) {
+      max-width: 640px;
+    }
+
+    $vega_anim: 1.4s ease-in-out;
 
     &__desktop {
       display: flex;
+      @include mq(0, 767) {
+        display: none;
+      }
+
+      svg.frag {
+        position: absolute;
+        @include mq(0, 1399) {
+          max-width: 40px;
+          width: 100%;
+        }
+        @include mq(0, 1199) {
+          max-width: 33px;
+          width: 100%;
+        }
+
+        &.frag-1 {
+          bottom: -200px;
+          left: -200px;
+        }
+
+        &.frag-2 {
+          top: -300px;
+        }
+
+        &.frag-3 {
+          right: -300px;
+          bottom: -300px;
+        }
+      }
 
       svg {
+        position: relative;
+        transition: $vega_anim;
+
+        //BEFORE ANIMATION
+
+        &.letter-1 {
+          top: 800px;
+          right: 800px;
+        }
+
+        &.letter-2 {
+          z-index: 1;
+          bottom: 900px;
+        }
+
+        &.letter-3 {
+          z-index: 2;
+          top: 800px;
+        }
+
+        &.letter-4 {
+          right: -800px;
+          bottom: 800px;
+        }
+      }
+
+
+      &--animate {
+        svg {
+          &.letter-1 {
+            top: 0;
+            right: 0;
+          }
+
+          &.letter-2 {
+            right: 44px;
+            bottom: 36px;
+            @include mq(0, 1399) {
+              right: 39px;
+              bottom: 42px;
+            }
+            @include mq(0, 1199) {
+              right: 33px;
+              bottom: 51px;
+            }
+            @include mq(0, 991) {
+              right: 25px;
+            }
+          }
+
+          &.letter-3 {
+            top: 186px;
+            right: 130px;
+            @include mq(0, 1399) {
+              top: 178px;
+              right: 118px;
+            }
+            @include mq(0, 1199) {
+              top: 161px;
+              right: 106px;
+            }
+            @include mq(0, 991) {
+              top: 130px;
+              right: 92px;
+            }
+          }
+
+          &.letter-4 {
+            right: 171px;
+            bottom: 14px;
+            @include mq(0, 991) {
+              right: 156px;
+              bottom: 23px;
+            }
+          }
+        }
+
+        svg.frag {
+          position: absolute;
+          @include mq(0, 767) {
+            display: none;
+          }
+
+          &.frag-1 {
+            bottom: 160px;
+            left: 190px;
+          }
+
+          &.frag-2 {
+            top: 30px;
+            right: 50%;
+          }
+
+          &.frag-3 {
+            bottom: 70px;
+            right: 143px;
+            @include mq(0, 1199) {
+              right: 178px;
+            }
+            @include mq(0, 991) {
+              right: 200px;
+            }
+          }
+        }
+      }
+    }
+
+    &__mobile {
+      @include minw(768) {
+        display: none;
       }
     }
   }
