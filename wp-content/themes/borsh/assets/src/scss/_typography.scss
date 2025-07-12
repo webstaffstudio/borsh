@@ -17,7 +17,12 @@ body {
 }
 
 .container {
-  padding: 0 16px;
+  padding: 0 32px;
+  margin: 0 auto;
+  display: block;
+  @include minw(1400) {
+    max-width: 1324px;
+  }
 }
 
 * {
