@@ -12,7 +12,7 @@ body {
   font-family: $font;
   color: #000;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 23px;
   font-size: 20px;
 }
 
@@ -57,13 +57,39 @@ img {
 	Typo tags
 	-----------------------------------------------------------------
 **/
-
 p {
+  font-family: $font;
   color: #000;
   font-weight: 400;
-  line-height: 26px;
-  margin-bottom: 16px;
+  line-height: 23px;
   font-size: 20px;
+}
+
+
+.b-title {
+  font-size: 51px;
+  line-height: 23px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.b-btn {
+  font-size: 20px;
+  line-height: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  padding: 14px 20px;
+  color: #000;
+  display: block;
+  text-align: center;
+  min-width: 220px;
+  transition: $transition;
+
+  &:hover {
+    background-color: $red;
+    color: #fff;
+  }
 }
 
 ul,
