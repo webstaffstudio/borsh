@@ -66,21 +66,35 @@ p {
   line-height: 23px;
   font-size: 20px;
 }
+
 .text-medium {
   font-size: 32px;
   line-height: 1.1;
+  @include mq(0, 991) {
+    font-size: 26px;
+    line-height: 1.1;
+  }
 }
-.text-large{
+
+.text-large {
   font-size: 51px;
   line-height: 1.1;
+  @include mq(0, 991) {
+    font-size: 36px;
+    line-height: 1.1;
+  }
 }
 
 
 .b-title {
   font-size: 51px;
-  line-height: 23px;
+  line-height: 1.1;
   text-transform: uppercase;
   font-weight: bold;
+  @include mq(0, 991) {
+    font-size: 36px;
+    line-height: 1.1;
+  }
 }
 
 .b-btn {
@@ -288,41 +302,85 @@ $colors: (
 );
 
 @each $value in $spacings {
-  .m-#{$value}   { margin: #{$value}px; }
-  .mt-#{$value}  { margin-top: #{$value}px; }
-  .mr-#{$value}  { margin-right: #{$value}px; }
-  .mb-#{$value}  { margin-bottom: #{$value}px; }
-  .ml-#{$value}  { margin-left: #{$value}px; }
-  .mx-#{$value}  { margin-left: #{$value}px; margin-right: #{$value}px; }
-  .my-#{$value}  { margin-top: #{$value}px; margin-bottom: #{$value}px; }
+  .m-#{$value} {
+    margin: #{$value}px;
+  }
+  .mt-#{$value} {
+    margin-top: #{$value}px;
+  }
+  .mr-#{$value} {
+    margin-right: #{$value}px;
+  }
+  .mb-#{$value} {
+    margin-bottom: #{$value}px;
+  }
+  .ml-#{$value} {
+    margin-left: #{$value}px;
+  }
+  .mx-#{$value} {
+    margin-left: #{$value}px;
+    margin-right: #{$value}px;
+  }
+  .my-#{$value} {
+    margin-top: #{$value}px;
+    margin-bottom: #{$value}px;
+  }
 
-  .p-#{$value}   { padding: #{$value}px; }
-  .pt-#{$value}  { padding-top: #{$value}px; }
-  .pr-#{$value}  { padding-right: #{$value}px; }
-  .pb-#{$value}  { padding-bottom: #{$value}px; }
-  .pl-#{$value}  { padding-left: #{$value}px; }
-  .px-#{$value}  { padding-left: #{$value}px; padding-right: #{$value}px; }
-  .py-#{$value}  { padding-top: #{$value}px; padding-bottom: #{$value}px; }
+  .p-#{$value} {
+    padding: #{$value}px;
+  }
+  .pt-#{$value} {
+    padding-top: #{$value}px;
+  }
+  .pr-#{$value} {
+    padding-right: #{$value}px;
+  }
+  .pb-#{$value} {
+    padding-bottom: #{$value}px;
+  }
+  .pl-#{$value} {
+    padding-left: #{$value}px;
+  }
+  .px-#{$value} {
+    padding-left: #{$value}px;
+    padding-right: #{$value}px;
+  }
+  .py-#{$value} {
+    padding-top: #{$value}px;
+    padding-bottom: #{$value}px;
+  }
 
-  .gap-#{$value} { gap: #{$value}px; }
+  .gap-#{$value} {
+    gap: #{$value}px;
+  }
 
-  .radius-#{$value} { border-radius: #{$value}px; }
+  .radius-#{$value} {
+    border-radius: #{$value}px;
+  }
 }
 
 @each $value in $font-weights {
-  .fw-#{$value} { font-weight: $value; }
+  .fw-#{$value} {
+    font-weight: $value;
+  }
 }
 
 @each $value in $font-size {
-  .fs-#{$value} { font-size: #{$value}px; }
+  .fs-#{$value} {
+    font-size: #{$value}px;
+  }
 }
 
 @each $value in $max-width {
-  .mw-#{$value} { max-width: #{$value}px; }
+  .mw-#{$value} {
+    max-width: #{$value}px;
+  }
 }
 
 @each $value in $transition {
-  .transition-#{$value} { transition: all #{math.div($value, 10)}s ease-in-out; }
+  .transition-#{$value} {
+    transition: all #{math.div($value, 10)}s ease-in-out;
+  }
 }
 
 @each $value in $transition {
@@ -345,42 +403,90 @@ $colors: (
 @each $breakpoint, $breakpoint-size in $breakpoints {
   @media (min-width: #{$breakpoint-size}) {
     @each $value in $spacings {
-      .m-#{$value}\@#{$breakpoint}   { margin: #{$value}px; }
-      .mt-#{$value}\@#{$breakpoint}  { margin-top: #{$value}px; }
-      .mr-#{$value}\@#{$breakpoint}  { margin-right: #{$value}px; }
-      .mb-#{$value}\@#{$breakpoint}  { margin-bottom: #{$value}px; }
-      .ml-#{$value}\@#{$breakpoint}  { margin-left: #{$value}px; }
-      .mx-#{$value}\@#{$breakpoint}  { margin-left: #{$value}px; margin-right: #{$value}px; }
-      .my-#{$value}\@#{$breakpoint}  { margin-top: #{$value}px; margin-bottom: #{$value}px; }
+      .m-#{$value}\@#{$breakpoint} {
+        margin: #{$value}px;
+      }
+      .mt-#{$value}\@#{$breakpoint} {
+        margin-top: #{$value}px;
+      }
+      .mr-#{$value}\@#{$breakpoint} {
+        margin-right: #{$value}px;
+      }
+      .mb-#{$value}\@#{$breakpoint} {
+        margin-bottom: #{$value}px;
+      }
+      .ml-#{$value}\@#{$breakpoint} {
+        margin-left: #{$value}px;
+      }
+      .mx-#{$value}\@#{$breakpoint} {
+        margin-left: #{$value}px;
+        margin-right: #{$value}px;
+      }
+      .my-#{$value}\@#{$breakpoint} {
+        margin-top: #{$value}px;
+        margin-bottom: #{$value}px;
+      }
 
-      .p-#{$value}\@#{$breakpoint}   { padding: #{$value}px; }
-      .pt-#{$value}\@#{$breakpoint}  { padding-top: #{$value}px; }
-      .pr-#{$value}\@#{$breakpoint}  { padding-right: #{$value}px; }
-      .pb-#{$value}\@#{$breakpoint}  { padding-bottom: #{$value}px; }
-      .pl-#{$value}\@#{$breakpoint}  { padding-left: #{$value}px; }
-      .px-#{$value}\@#{$breakpoint}  { padding-left: #{$value}px; padding-right: #{$value}px; }
-      .py-#{$value}\@#{$breakpoint}  { padding-top: #{$value}px; padding-bottom: #{$value}px; }
+      .p-#{$value}\@#{$breakpoint} {
+        padding: #{$value}px;
+      }
+      .pt-#{$value}\@#{$breakpoint} {
+        padding-top: #{$value}px;
+      }
+      .pr-#{$value}\@#{$breakpoint} {
+        padding-right: #{$value}px;
+      }
+      .pb-#{$value}\@#{$breakpoint} {
+        padding-bottom: #{$value}px;
+      }
+      .pl-#{$value}\@#{$breakpoint} {
+        padding-left: #{$value}px;
+      }
+      .px-#{$value}\@#{$breakpoint} {
+        padding-left: #{$value}px;
+        padding-right: #{$value}px;
+      }
+      .py-#{$value}\@#{$breakpoint} {
+        padding-top: #{$value}px;
+        padding-bottom: #{$value}px;
+      }
 
-      .gap-#{$value}\@#{$breakpoint} { gap: #{$value}px; }
+      .gap-#{$value}\@#{$breakpoint} {
+        gap: #{$value}px;
+      }
 
-      .radius-#{$value}\@#{$breakpoint} { border-radius: #{$value}px; }
+      .radius-#{$value}\@#{$breakpoint} {
+        border-radius: #{$value}px;
+      }
     }
 
     @each $value in $font-weights {
-      .fw-#{$value}\@#{$breakpoint} { font-weight: $value; }
+      .fw-#{$value}\@#{$breakpoint} {
+        font-weight: $value;
+      }
     }
 
     @each $value in $max-width {
-      .mw-#{$value}\@#{$breakpoint} { max-width: #{$value}px; }
+      .mw-#{$value}\@#{$breakpoint} {
+        max-width: #{$value}px;
+      }
     }
 
-    .mw100\@#{$breakpoint} { max-width: 100%; }
+    .mw100\@#{$breakpoint} {
+      max-width: 100%;
+    }
 
-    .text-center\@#{$breakpoint} { text-align: center; }
+    .text-center\@#{$breakpoint} {
+      text-align: center;
+    }
 
-    .text-left\@#{$breakpoint} { text-align: left; }
+    .text-left\@#{$breakpoint} {
+      text-align: left;
+    }
 
-    .mx-auto\@#{$breakpoint} { margin: 0 auto }
+    .mx-auto\@#{$breakpoint} {
+      margin: 0 auto
+    }
   }
 }
 
