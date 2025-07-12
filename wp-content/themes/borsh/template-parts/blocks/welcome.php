@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Name: Welcome
+ * Block Name: Стартова Секція
  * Description: A customizable block for displaying welcome slider section with a background, title, description, and optional button.
  * Icon: admin-users
  * Keywords: welcome, intro, section
