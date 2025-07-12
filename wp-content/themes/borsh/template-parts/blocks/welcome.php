@@ -89,7 +89,10 @@ $logo_bottom = get_field('welcome_logo_bottom');
                     <?php echo inline_svg('vega-desktop/ш.svg', 'letter-4'); ?>
                 </div>
                 <div class="vega-anim__mobile">
-                    <?php echo inline_svg('vega-desktop/vega-mobile.svg'); ?>
+                    <?php echo inline_svg('vega-mobile/б.svg', 'letter-1'); ?>
+                    <?php echo inline_svg('vega-mobile/о.svg', 'letter-2'); ?>
+                    <?php echo inline_svg('vega-mobile/р.svg', 'letter-3'); ?>
+                    <?php echo inline_svg('vega-mobile/ш.svg', 'letter-4'); ?>
                 </div>
             </div>
         </div>

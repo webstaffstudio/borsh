@@ -8,6 +8,10 @@
   overflow: hidden;
   @include mq(0, 767) {
     padding: 53px 0;
+    height: auto;
+    min-height: 818px;
+    display: flex;
+    align-items: end;
   }
 
   .container {
@@ -132,6 +136,12 @@
     }
     @include mq(0, 991) {
       max-width: 640px;
+    }
+    @include mq(0, 767) {
+      width: 2000px;
+      max-width: initial;
+      top: 0;
+      transform: translate(85%, -87%);
     }
 
     $vega_anim: 1.4s ease-in-out;
@@ -279,6 +289,74 @@
     &__mobile {
       @include minw(768) {
         display: none;
+      }
+      position: relative;
+      max-width: 640px;
+      width: 100%;
+      height: 520px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        position: relative;
+        transition: $vega_anim;
+        max-width: 200px;
+        width: 100%;
+
+        //BEFORE ANIMATION
+        &.letter-1 {
+          z-index: 1;
+          left: -500px;
+          bottom: 500px;
+        }
+
+        &.letter-2 {
+          z-index: 1;
+          left: 500px;
+          top: -500px;
+        }
+
+        &.letter-3 {
+          left: -800px;
+          z-index: 2;
+          max-width: 135px;
+        }
+
+        &.letter-4 {
+          right: -800px;
+          max-width: 160px;
+          z-index: 3;
+        }
+
+      }
+
+
+      &--animate {
+        svg {
+          &.letter-1 {
+            left: 130px;
+            bottom: 0;
+          }
+
+          &.letter-2 {
+            left: 97px;
+            top: 5px;
+
+          }
+
+          &.letter-3 {
+            top: 86px;
+            left: -143px;
+
+          }
+
+          &.letter-4 {
+            top: 86px;
+            right: 174px;
+
+          }
+        }
       }
     }
   }
