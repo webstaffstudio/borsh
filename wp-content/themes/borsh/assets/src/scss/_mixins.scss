@@ -1,0 +1,27 @@
+//
+// Custom mixins
+//
+// Custom media query range
+@mixin mq($min, $max) {
+  @media only screen and (min-width: $min+'px') and (max-width: $max+'px') {
+    @content;
+  }
+}
+
+@mixin mqHeight($max) {
+  @media only screen and (max-height: $max+'px') {
+    @content;
+  }
+}
+
+@mixin minHeight($min) {
+  @media only screen and (min-height: $min+'px') {
+    @content;
+  }
+}
+
+@mixin minw($min) {
+  @media screen and (min-width: $min+'px') {
+    @content;
+  }
+}
