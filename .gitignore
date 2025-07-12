@@ -1,9 +1,10 @@
-# Development files
 .idea
+public
 node_modules
 vendor
 mix-manifest.json
 mix-manifest.php
 package-lock.json
 composer.lock
-wp-content/uploads
+wp-includes
+wp-admin

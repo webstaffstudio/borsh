@@ -1,19 +1,9 @@
-
-# VAGRANT
-.vagrant/
-
-# IDE
-/nbproject/
-.idea/*
-
-# Composer
-composer.phar
-vendor/
-
-# Project
-.sass-cache
-assets/dist/
-bower_components/
-node_modules/
-
-_RESSOURCES/
+# Development files
+.idea
+node_modules
+vendor
+mix-manifest.json
+mix-manifest.php
+package-lock.json
+composer.lock
+wp-content/uploads
