@@ -1,8 +1,178 @@
 [
     {
+        "key": "group_68737511702a9",
+        "title": "Block: Organizers",
+        "fields": [
+            {
+                "key": "field_6873768eb8e99",
+                "label": "Про організаторів",
+                "name": "",
+                "aria-label": "",
+                "type": "accordion",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "open": 1,
+                "multi_expand": 0,
+                "endpoint": 0
+            },
+            {
+                "key": "field_68737511d9cda",
+                "label": "Заголовок",
+                "name": "title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Про організаторів",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68737530d9cdb",
+                "label": "Логотип зліва",
+                "name": "logo_left",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_68737541d9cdc",
+                "label": "Логотип праворуч",
+                "name": "logo_right",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_68737544d9cdd",
+                "label": "Текст зліва",
+                "name": "text_left",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_68737559d9cde",
+                "label": "Текст праворуч",
+                "name": "text_right",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/borsh-organizers"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
         "key": "group_687297704ea2b",
         "title": "Block: Ticket",
         "fields": [
+            {
+                "key": "field_687376cb03cae",
+                "label": "Квитки",
+                "name": "",
+                "aria-label": "",
+                "type": "accordion",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "open": 1,
+                "multi_expand": 0,
+                "endpoint": 0
+            },
             {
                 "key": "field_68729770f7357",
                 "label": "Заголовок",
@@ -33,7 +203,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "25",
+                    "width": "75",
                     "class": "",
                     "id": ""
                 },
@@ -78,12 +248,12 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "25",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
                 "default_value": "Ціна: 777 грн",
-                "maxlength": "",
+                "maxlength": 17,
                 "placeholder": "",
                 "prepend": "",
                 "append": ""
@@ -98,12 +268,12 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "25",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
                 "default_value": "1 177 грн",
-                "maxlength": "",
+                "maxlength": 14,
                 "placeholder": "",
                 "prepend": "",
                 "append": ""
@@ -113,7 +283,7 @@
                 "label": "Донат",
                 "name": "donate",
                 "aria-label": "",
-                "type": "text",
+                "type": "textarea",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -124,16 +294,16 @@
                 },
                 "default_value": "20% з кожного квитка йде на донат",
                 "maxlength": "",
+                "rows": 2,
                 "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "new_lines": "br"
             },
             {
                 "key": "field_687298cff735c",
                 "label": "Наступна ціна",
                 "name": "next_price",
                 "aria-label": "",
-                "type": "text",
+                "type": "textarea",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -142,18 +312,18 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "Наступне підвищення ціни  1.08 - 1 177 грн",
+                "default_value": "Наступне підвищення ціни\r\n1.08 - 1 177 грн",
                 "maxlength": "",
+                "rows": 2,
                 "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "new_lines": "br"
             },
             {
                 "key": "field_68729949f735e",
                 "label": "Кількість білетів",
                 "name": "tickets",
                 "aria-label": "",
-                "type": "text",
+                "type": "textarea",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -162,11 +332,11 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "Кількість обмежена: залишилось 237 квитків",
+                "default_value": "Кількість обмежена:\r\nзалишилось 237 квитків",
                 "maxlength": "",
+                "rows": 2,
                 "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "new_lines": "br"
             },
             {
                 "key": "field_68729955f735f",
