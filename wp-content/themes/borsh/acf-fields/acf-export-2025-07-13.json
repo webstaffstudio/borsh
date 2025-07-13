@@ -1,5 +1,217 @@
 [
     {
+        "key": "group_68738861c3dea",
+        "title": "Block: For whom",
+        "fields": [
+            {
+                "key": "field_687388628c5f8",
+                "label": "Для кого",
+                "name": "",
+                "aria-label": "",
+                "type": "accordion",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "open": 1,
+                "multi_expand": 0,
+                "endpoint": 0
+            },
+            {
+                "key": "field_6873887a8c5f9",
+                "label": "Заголовок",
+                "name": "title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "ДЛЯ КОГО",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_687388898c5fa",
+                "label": "Заголовок списка зліва",
+                "name": "title_list_left",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "ПІДПРИЄМЦІ \r\nТА УПРАВЛІНЦІ",
+                "maxlength": "",
+                "rows": 2,
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_6873895c8c5fb",
+                "label": "Заголовок списка праворуч",
+                "name": "title_list_right",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "КРЕАТИВНИКИ ТА ДІДЖИТАЛ\r\nСПЕЦІАЛІСТИ",
+                "maxlength": "",
+                "rows": 2,
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_6873895f8c5fc",
+                "label": "Список зліва",
+                "name": "list_left",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_687389f08c5ff",
+                        "label": "Пункт",
+                        "name": "item",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6873895f8c5fc"
+                    }
+                ]
+            },
+            {
+                "key": "field_68738a2f8c600",
+                "label": "Список праворуч",
+                "name": "list_right",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_68738a2f8c601",
+                        "label": "Пункт",
+                        "name": "item",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_68738a2f8c600"
+                    }
+                ]
+            },
+            {
+                "key": "field_687389648c5fe",
+                "label": "Текст внизу",
+                "name": "text_bottom",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "ТА ВСІ, ХТО ВІДЧУВАЄ, ЩО ЇХ БІЗНЕСАМ, ПРОЄКТАМ ЧИ РУТИНІ ПОТРІБЕН КРЕАТИВ",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/borsh-for-whom"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
         "key": "group_68737511702a9",
         "title": "Block: Organizers",
         "fields": [
