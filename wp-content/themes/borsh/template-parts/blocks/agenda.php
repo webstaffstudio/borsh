@@ -22,10 +22,16 @@ if ($title || $list) : ?>
                         $color = 'style="background-color:'.$item['color_label'].'"';
                         $agent = $item['agent'];
                         $speakers = $item['speakers'];
+                        $words = explode(" ", $speakers);
+                        if (!empty($words)) {
+                            $words[0] = '<span class="first-word">' . $words[0] . '</span>';
+                            $speakers = implode(" ", $words);
+                        }
+
                         $time_start = $item['time_start'];
                         $time_end = $item['time_end'];
                         if (!empty($agent || $speakers)) : ?>
-                            <div class="agenda__item p-25 d-flex ai-c gap-65">
+                            <div class="agenda__item px-25@sm px-0 py-25 d-flex ai-c gap-65">
                                 <div class="agenda__color radius-10" <?= $color; ?>></div>
 
                                 <div class="agenda__agent">
