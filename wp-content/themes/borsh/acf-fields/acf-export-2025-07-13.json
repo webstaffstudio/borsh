@@ -1,5 +1,400 @@
 [
     {
+        "key": "group_6873bd6f95f83",
+        "title": "Block: Agenda",
+        "fields": [
+            {
+                "key": "field_6873bd705a6d7",
+                "label": "Розпорядок",
+                "name": "",
+                "aria-label": "",
+                "type": "accordion",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "open": 1,
+                "multi_expand": 0,
+                "endpoint": 0
+            },
+            {
+                "key": "field_6873bd89c3dda",
+                "label": "Заголовок",
+                "name": "title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "ПРОГРАМА",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6873bdb0c3ddb",
+                "label": "Список",
+                "name": "list",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6873bdc9c3ddc",
+                        "label": "Колір лейби",
+                        "name": "color_label",
+                        "aria-label": "",
+                        "type": "color_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "30",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "enable_opacity": 0,
+                        "return_format": "string",
+                        "parent_repeater": "field_6873bdb0c3ddb"
+                    },
+                    {
+                        "key": "field_6873be23c3ddd",
+                        "label": "Час початку",
+                        "name": "time_start",
+                        "aria-label": "",
+                        "type": "time_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "35",
+                            "class": "",
+                            "id": ""
+                        },
+                        "display_format": "H:i",
+                        "return_format": "H:i",
+                        "parent_repeater": "field_6873bdb0c3ddb"
+                    },
+                    {
+                        "key": "field_6873be99c3dde",
+                        "label": "Час закінчення",
+                        "name": "time_end",
+                        "aria-label": "",
+                        "type": "time_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "35",
+                            "class": "",
+                            "id": ""
+                        },
+                        "display_format": "H:i",
+                        "return_format": "H:i",
+                        "parent_repeater": "field_6873bdb0c3ddb"
+                    },
+                    {
+                        "key": "field_6873bf1ac3de0",
+                        "label": "Представники",
+                        "name": "agent",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "35",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 2,
+                        "placeholder": "",
+                        "new_lines": "br",
+                        "parent_repeater": "field_6873bdb0c3ddb"
+                    },
+                    {
+                        "key": "field_6873bee0c3ddf",
+                        "label": "Спікери",
+                        "name": "speakers",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "65",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "rows": 4,
+                        "placeholder": "",
+                        "new_lines": "br",
+                        "parent_repeater": "field_6873bdb0c3ddb"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/borsh-agenda"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_68738861c3dea",
+        "title": "Block: For whom",
+        "fields": [
+            {
+                "key": "field_687388628c5f8",
+                "label": "Для кого",
+                "name": "",
+                "aria-label": "",
+                "type": "accordion",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "open": 1,
+                "multi_expand": 0,
+                "endpoint": 0
+            },
+            {
+                "key": "field_6873887a8c5f9",
+                "label": "Заголовок",
+                "name": "title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "ДЛЯ КОГО",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_687388898c5fa",
+                "label": "Заголовок списка зліва",
+                "name": "title_list_left",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "ПІДПРИЄМЦІ \r\nТА УПРАВЛІНЦІ",
+                "maxlength": "",
+                "rows": 2,
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_6873895c8c5fb",
+                "label": "Заголовок списка праворуч",
+                "name": "title_list_right",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "КРЕАТИВНИКИ ТА ДІДЖИТАЛ\r\nСПЕЦІАЛІСТИ",
+                "maxlength": "",
+                "rows": 2,
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_6873895f8c5fc",
+                "label": "Список зліва",
+                "name": "list_left",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_687389f08c5ff",
+                        "label": "Пункт",
+                        "name": "item",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6873895f8c5fc"
+                    }
+                ]
+            },
+            {
+                "key": "field_68738a2f8c600",
+                "label": "Список праворуч",
+                "name": "list_right",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_68738a2f8c601",
+                        "label": "Пункт",
+                        "name": "item",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_68738a2f8c600"
+                    }
+                ]
+            },
+            {
+                "key": "field_687389648c5fe",
+                "label": "Текст внизу",
+                "name": "text_bottom",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "ТА ВСІ, ХТО ВІДЧУВАЄ, ЩО ЇХ БІЗНЕСАМ, ПРОЄКТАМ ЧИ РУТИНІ ПОТРІБЕН КРЕАТИВ",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/borsh-for-whom"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
         "key": "group_68737511702a9",
         "title": "Block: Organizers",
         "fields": [
@@ -138,6 +533,93 @@
                     "param": "block",
                     "operator": "==",
                     "value": "acf\/borsh-organizers"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_68739c536ebef",
+        "title": "Block: Poster",
+        "fields": [
+            {
+                "key": "field_68739c54c7ff9",
+                "label": "Постер",
+                "name": "",
+                "aria-label": "",
+                "type": "accordion",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "open": 1,
+                "multi_expand": 0,
+                "endpoint": 0
+            },
+            {
+                "key": "field_68739c8ec7ffa",
+                "label": "Зображення",
+                "name": "image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "40",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_68739cacc7ffb",
+                "label": "Текст",
+                "name": "text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "60",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "БОРЩ не може складатися з одного інградієнту. \r\nТому ми підготували різні активності в рамках івенту",
+                "maxlength": "",
+                "rows": 2,
+                "placeholder": "",
+                "new_lines": "br"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/borsh-poster"
                 }
             ]
         ],

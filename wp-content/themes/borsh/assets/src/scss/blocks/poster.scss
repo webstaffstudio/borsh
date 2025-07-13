@@ -1,0 +1,42 @@
+.poster {
+  position: relative;
+  height: calc(333px + 0.47 * 100vw);
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    height: auto;
+  }
+
+  &__img {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    z-index: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    img {
+      aspect-ratio: 1 / 0.622;
+    }
+  }
+
+  &__filter {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    @media (max-width: 1200px) {
+      position: relative;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+}

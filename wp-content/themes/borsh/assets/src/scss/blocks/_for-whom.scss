@@ -1,0 +1,36 @@
+.for-whom {
+  &__content {
+    @media (max-width: 768px) {
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &__right {
+    max-width: 49%;
+    width: 100%;
+
+    @media (max-width: 1200px) {
+      max-width: fit-content;
+    }
+  }
+
+  &__list {
+    li {
+      position: relative;
+      line-height: 1;
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: -24px;
+        top: 5px;
+        height: 10px;
+        width: 13px;
+        background-image: url("../../src/img/red-check.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
