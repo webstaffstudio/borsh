@@ -28,17 +28,19 @@ $footer_title = get_field('overview_footer_text_title');
                 <div class="col">
                     <?php if ($logo): ?>
                         <div class="overview_top_logo">
-                            <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt'] ?: $logo['title']; ?>" loading="lazy">
+                            <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt'] ?: $logo['title']; ?>"
+                                 loading="lazy">
                         </div>
                     <?php endif; ?>
-                    <?php echo ($title) ? '<div class="b-title">'.$title.'</div>' : ''; ?>
-                    <?php echo ($text) ? '<div class="overview_description">'.$text.'</div>' : ''; ?>
+                    <?php echo ($title) ? '<div class="b-title">' . $title . '</div>' : ''; ?>
+                    <?php echo ($text) ? '<div class="overview_description">' . $text . '</div>' : ''; ?>
                 </div>
                 <div class="col">
-                    <?php echo ($image_title) ? '<h3 class="text-medium">'.$image_title.'</h3>' : ''; ?>
+                    <?php echo ($image_title) ? '<h3 class="text-medium">' . $image_title . '</h3>' : ''; ?>
                     <?php if ($image): ?>
                         <div class="overview__image">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?: $image['title']; ?>" loading="lazy">
+                            <img src="<?php echo $image['url']; ?>"
+                                 alt="<?php echo $image['alt'] ?: $image['title']; ?>" loading="lazy">
                         </div>
                     <?php endif; ?>
                 </div>
@@ -46,23 +48,35 @@ $footer_title = get_field('overview_footer_text_title');
 
             <div class="overview__counters">
                 <div class="counters-row">
-                    <div class="counters-row__counter">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/placeholder.svg" alt="">
-                        <?php echo ($counter_1) ? '<span>'.$counter_1.'</span>' : ''; ?>
+                    <div class="counters-row__counter c1">
+                        <div class="img-counter">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/counters/c-1.svg"
+                                 alt="c-1">
+                        </div>
+                        <?php echo ($counter_1) ? '<span>' . $counter_1 . '</span>' : ''; ?>
                     </div>
-                    <div class="counters-row__counter">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/placeholder.svg" alt="">
-                        <?php echo ($counter_2) ? '<span>'.$counter_2.'</span>' : ''; ?>
+                    <div class="counters-row__counter c2">
+                        <div class="img-counter">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/counters/c-2.svg"
+                                 alt="c-2">
+                        </div>
+                        <?php echo ($counter_2) ? '<span>' . $counter_2 . '</span>' : ''; ?>
                     </div>
                 </div>
                 <div class="counters-row">
-                    <div class="counters-row__counter">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/placeholder.svg" alt="">
-                        <?php echo ($counter_3) ? '<span>'.$counter_3.'</span>' : ''; ?>
+                    <div class="counters-row__counter c3">
+                        <div class="img-counter">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/counters/c-3.svg"
+                                 alt="c-3">
+                        </div>
+                        <?php echo ($counter_3) ? '<span>' . $counter_3 . '</span>' : ''; ?>
                     </div>
-                    <div class="counters-row__counter">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/placeholder.svg" alt="">
-                        <?php echo ($counter_4) ? '<span>'.$counter_4.'</span>' : ''; ?>
+                    <div class="counters-row__counter c4">
+                        <div class="img-counter">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/counters/c-4.svg"
+                                 alt="c-4">
+                        </div>
+                        <?php echo ($counter_4) ? '<span>' . $counter_4 . '</span>' : ''; ?>
                     </div>
                 </div>
             </div>
@@ -70,11 +84,11 @@ $footer_title = get_field('overview_footer_text_title');
             <?php if ($footer_label || $footer_title): ?>
                 <div class="overview__footer">
                     <div class="o-footer__img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/placeholder.svg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/tomato.svg" alt="">
                     </div>
                     <div class="o-footer__text">
-                        <?php echo ($footer_label) ? '<p>'.$footer_label.'</p>' : ''; ?>
-                        <?php echo ($footer_title) ? '<div class="text-medium">'.$footer_title.'</div>' : ''; ?>
+                        <?php echo ($footer_label) ? '<p>' . $footer_label . '</p>' : ''; ?>
+                        <?php echo ($footer_title) ? '<div class="text-medium">' . $footer_title . '</div>' : ''; ?>
                     </div>
                 </div>
             <?php endif; ?>
