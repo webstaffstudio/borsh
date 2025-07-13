@@ -2,6 +2,18 @@
 
 // ACF functions here
 
+// Load ACF field definitions
+$acfBlocksDir = __DIR__ . '/acf-blocks/';
+if (file_exists($acfBlocksDir) && is_dir($acfBlocksDir)) {
+    foreach (new DirectoryIterator($acfBlocksDir) as $file) {
+        if ($file->isDot() || $file->getExtension() !== 'php') {
+            continue;
+        }
+
+        require_once $file->getPathname();
+    }
+}
+
 if (function_exists('acf_register_block')) {
 
     add_action('block_categories_all', function ($categories) {

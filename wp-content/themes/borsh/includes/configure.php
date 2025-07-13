@@ -42,6 +42,7 @@ function custom_setup() {
 	// Custom image sizes
 	// add_image_size( '424x424', 424, 424, true );
 	// add_image_size( '1920', 1920, 9999 );
+	add_image_size( 'slider_image', 299, 266, true );
 }
 add_action('after_setup_theme', 'custom_setup');
 
