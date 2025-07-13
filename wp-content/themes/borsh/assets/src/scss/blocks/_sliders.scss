@@ -60,6 +60,9 @@
   &--activities {
     .b-title {
       color: $blue;
+      @include mq(0, 600){
+        font-size: 26px;
+      }
     }
     .slider__slide-title {
       color: $blue;
@@ -130,9 +133,9 @@
   &__swiper {
     width: 100%;
     overflow: hidden;
-    @include mq(0, 991) {
-      overflow: visible;
-    }
+    //@include mq(0, 991) {
+    //  overflow: visible;
+    //}
   }
 
   &__slide {
@@ -141,9 +144,9 @@
     flex-direction: column;
     border-radius: 30px;
     overflow: hidden;
-    @include mq(0, 991) {
-      width: 266px !important;
-    }
+    //@include mq(0, 991) {
+    //  width: 310px !important;
+    //}
 
     .slide-text {
       color: #fff;

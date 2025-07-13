@@ -34,7 +34,7 @@ $logos = get_field('footer_logos');
 
             <?php if ( !empty($logos) && is_array($logos) && count(array_filter($logos, function($logo) { return isset($logo['image']) && is_array($logo['image']) && !empty($logo['image']); })) > 0 ) : ?>
                 <div class="footer__bot bg-white py-20">
-                    <div class="container d-flex jc-se gap-20 fw-wrap">
+                    <div class="container d-flex jc-se gap-20">
                         <?php foreach ($logos as $item):
                             $img = $item['image'];
                             $img_url = $img['sizes']['large'] ?? '';

@@ -1,14 +1,36 @@
 
 window.addEventListener('DOMContentLoaded', function() {
-    function addVegaAnimation() {
-        document.querySelectorAll('.vega-anim__desktop').forEach(function(el) {
-            el.classList.add('vega-anim__desktop--animate');
-        });
+    function smoothScrollTo(to, duration = 500) {
+        const start = window.pageYOffset;
+        const difference = to - start;
+        const startTime = performance.now();
 
-        document.querySelectorAll('.vega-anim__mobile').forEach(function(el) {
-            el.classList.add('vega-anim__mobile--animate');
-        });
+        function step(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 0.5 * (1 - Math.cos(Math.PI * progress));
+            window.scrollTo(0, start + difference * ease);
+            if (elapsed < duration) {
+                requestAnimationFrame(step);
+            }
+        }
+
+        requestAnimationFrame(step);
     }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#' || targetId === '') return;
+            const targetElement = document.querySelector(targetId);
+            if (!targetElement) return;
+            e.preventDefault();
+            e.stopPropagation();
+            const yOffset = -50;
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            smoothScrollTo(y, 200);
+        });
+    });
 
     function initSliders() {
         if (typeof Swiper === 'undefined') {
@@ -24,7 +46,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 var nextButton = slider.closest('.slider__container').querySelector('.slider__button--next');
 
                 new Swiper(slider, {
-                    slidesPerView: 3,
+                    slidesPerView: 1,
                     spaceBetween: 30,
                     loop: true,
                     navigation: {
@@ -32,6 +54,9 @@ window.addEventListener('DOMContentLoaded', function() {
                         nextEl: nextButton,
                     },
                     breakpoints: {
+                        550: {
+                            slidesPerView: 2,
+                        },
                         992: {
                             slidesPerView: 3,
                         },
@@ -44,6 +69,6 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    addVegaAnimation();
+
     initSliders();
 });

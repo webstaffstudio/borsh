@@ -16,7 +16,7 @@ $sticky_header_text = get_field('sticky_header_text');
     <header id="masthead" class="site-header bg-body-tertiary">
         <div class="container">
             <?php if ($sticky_header_text): ?>
-                <p><a href="<?php echo $sticky_header_text['url']; ?>"><?php echo $sticky_header_text['title']; ?></a>
+                <p class="m-0"><a href="<?php echo $sticky_header_text['url']; ?>"><?php echo $sticky_header_text['title']; ?></a>
                 </p>
             <?php endif; ?>
         </div>
