@@ -1,0 +1,226 @@
+@function iconArrowLeft($color) {
+  @return svg-encode(
+                  '<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.4807 12.4807H5.48071" stroke="' + $color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.4807 19.4807L5.48071 12.4807L12.4807 5.48071" stroke="' + $color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  );
+}
+
+@function iconArrowRight($color) {
+  @return svg-encode(
+                  '<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.51904 12.5193H19.519" stroke="' + $color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.519 5.51929L19.519 12.5193L12.519 19.5193" stroke="' + $color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  );
+}
+
+/* Swiper basic styles */
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+
+.slider {
+  padding: 60px 0 150px;
+  background-color: $chamois;
+  overflow: hidden;
+  @include mq(0, 991){
+    padding-bottom: 60px;
+  }
+
+  &--speakers {
+    background-color: #000;
+
+    .b-title {
+      color: $purple;
+      text-align: left;
+
+    }
+  }
+  &--activities{
+
+    .slider__title {
+      color: $blue;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 75px;
+    @include mq(0, 991) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__container {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $blue;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #4c48d1;
+    }
+
+    &--prev {
+      margin-right: 10px;
+
+      &:after {
+        content: '';
+        width: 23px;
+        height: 23px;
+        background: iconArrowLeft(#fff);
+      }
+    }
+
+    &--next {
+      &:after {
+        content: '';
+        width: 23px;
+        height: 23px;;
+        background: iconArrowRight(#fff);
+      }
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    overflow: hidden;
+    @include mq(0, 991) {
+      overflow: visible;
+    }
+  }
+
+  &__slide {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    overflow: hidden;
+    @include mq(0, 991) {
+      width: 266px !important;
+    }
+
+    .slide-text {
+      color: #fff;
+      height: 100%;
+      padding: 27px;
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        @extend .text-medium;
+        font-weight: bold;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+
+    &--purple {
+      .slide-text {
+        background-color: $purple;
+      }
+    }
+
+    &--blue {
+      .slide-text {
+        background-color: $blue;
+      }
+    }
+
+    &--green {
+      .slide-text {
+        background-color: $green;
+      }
+    }
+
+    &--red {
+      .slide-text {
+        background-color: $red;
+      }
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 266px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__slide-title {
+    margin-bottom: 10px;
+  }
+
+  &__slide-description {
+    align-self: flex-end;
+    flex-grow: 1;
+  }
+
+}
+
+// Responsive styles
+@media (max-width: 991px) {
+  .slider {
+    // Tablet-specific layout adjustments
+  }
+}
+
+@media (max-width: 767px) {
+  .slider {
+    padding: 40px 0;
+
+    &__navigation {
+      justify-content: center;
+    }
+  }
+}
