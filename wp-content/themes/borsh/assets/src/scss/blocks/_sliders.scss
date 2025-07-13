@@ -43,7 +43,7 @@
   padding: 60px 0 150px;
   background-color: $chamois;
   overflow: hidden;
-  @include mq(0, 991){
+  @include mq(0, 991) {
     padding-bottom: 60px;
   }
 
@@ -53,13 +53,14 @@
     .b-title {
       color: $purple;
       text-align: left;
-
     }
-  }
-  &--activities{
 
-    .slider__title {
+  }
+
+  &--activities {
+    .slider__slide-title {
       color: $blue;
+      margin-bottom: 32px;
     }
   }
 
@@ -144,9 +145,12 @@
     .slide-text {
       color: #fff;
       height: 100%;
-      padding: 27px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-      h3 {
+      h4 {
         margin-top: 0;
         margin-bottom: 20px;
         @extend .text-medium;
@@ -199,11 +203,6 @@
 
   &__slide-title {
     margin-bottom: 10px;
-  }
-
-  &__slide-description {
-    align-self: flex-end;
-    flex-grow: 1;
   }
 
 }

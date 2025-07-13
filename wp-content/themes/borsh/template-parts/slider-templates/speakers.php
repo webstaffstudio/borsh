@@ -36,7 +36,7 @@ $current_class = $color_classes[$index % count($color_classes)];
     <?php endif; ?>
     <div class="slide-text">
         <?php if (!empty($slide['title'])) : ?>
-            <h3 class="slider__slide-title"><?php echo $slide['title']; ?></h3>
+            <h4 class="slider__slide-title"><?php echo $slide['title']; ?></h4>
         <?php endif; ?>
 
         <?php if (!empty($slide['description'])) : ?>

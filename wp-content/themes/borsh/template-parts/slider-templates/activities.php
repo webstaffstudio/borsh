@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 <div class="swiper-slide slider__slide">
     <div class="slide-text bg-white">
         <?php if (!empty($slide['title'])) : ?>
-            <p class="slider__slide-title fw-bold color-blue"><?php echo $slide['title']; ?></p>
+            <h4 class="slider__slide-title fw-700 mt-0 mb-32 color-blue"><?php echo $slide['title']; ?></h4>
         <?php endif; ?>
 
         <?php if (!empty($slide['description'])) : ?>
