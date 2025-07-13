@@ -2,7 +2,7 @@
 /**
  * Block Name: Розпорядок
  * Description: A customizable block for displaying welcome slider section with a background, title, description, and optional button.
- * Icon: admin-users
+ * Icon: calendar
  * Keywords: welcome, intro, section
  * Supports: {"align":true,"mode":false,"multiple":true}
  */
@@ -16,7 +16,7 @@ if ($title || $list) : ?>
         <div class="agenda__container container">
             <div class="agenda__wrapper">
                 <?= $title ? '<h3 class="b-title color-blue mb-50 mt-0">'.$title.'</h3>' : ''; ?>
-                
+
                 <div class="agenda__list">
                     <?php foreach ($list as $item) :
                         $color = 'style="background-color:'.$item['color_label'].'"';
@@ -46,7 +46,7 @@ if ($title || $list) : ?>
                             </div>
                         <?php endif; ?>
                     <?php endforeach; ?>
-                    
+
                 </div>
             </div>
         </div>

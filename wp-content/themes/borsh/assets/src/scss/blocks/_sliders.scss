@@ -58,6 +58,9 @@
   }
 
   &--activities {
+    .b-title {
+      color: $blue;
+    }
     .slider__slide-title {
       color: $blue;
       margin-bottom: 32px;

@@ -2,7 +2,7 @@
 /**
  * Block Name: Про подію
  * Description:
- * Icon: admin-users
+ * Icon: info
  * Keywords: welcome, intro, section
  * Supports: {"align":true,"mode":false,"multiple":true}
  */

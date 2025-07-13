@@ -2,7 +2,7 @@
 /**
  * Block Name: Огляд Події
  * Description:
- * Icon: admin-users
+ * Icon: visibility
  * Keywords: welcome, intro, section
  * Supports: {"align":true,"mode":false,"multiple":true}
  */
