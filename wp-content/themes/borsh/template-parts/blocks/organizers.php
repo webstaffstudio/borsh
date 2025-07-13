@@ -2,7 +2,7 @@
 /**
  * Block Name: Про Організаторів
  * Description: A customizable block for displaying welcome slider section with a background, title, description, and optional button.
- * Icon: admin-users
+ * Icon: businessperson
  * Keywords: welcome, intro, section
  * Supports: {"align":true,"mode":false,"multiple":true}
  */
