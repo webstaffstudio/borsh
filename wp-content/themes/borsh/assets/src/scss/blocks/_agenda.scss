@@ -2,8 +2,7 @@
   &__item {
     @media (max-width: 992px) {
       flex-wrap: wrap;
-      gap: 15px;
-      justify-content: space-between;
+      gap: 35px;
     }
   }
 
@@ -17,6 +16,10 @@
 
     @media (max-width: 992px) {
       width: fit-content;
+    }
+    @media (max-width: 767px) {
+      max-width: 210px;
+      width: 100%;
     }
 
     @media (max-width: 576px) {
@@ -38,8 +41,11 @@
   }
 
   &__time {
-    @media (max-width: 576px) {
-      margin: 0 auto;
+    @media (max-width: 992px) {
+      margin-left: auto;
+    }
+    @media (max-width: 530px) {
+      margin: 0;
     }
   }
 }

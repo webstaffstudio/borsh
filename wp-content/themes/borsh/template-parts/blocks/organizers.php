@@ -14,7 +14,7 @@ $text_left = get_field('text_left');
 $text_right = get_field('text_right');
 
 if ($title || $logo_left || $logo_right || $text_left || $text_right) : ?>
-    <section class="organizers bg-blue pt-95 pb-60">
+    <section class="organizers bg-blue pt-95@ls pb-60 pt-35">
         <div class="organizers__container container">
             <div class="organizers__wrapper">
                 <?= $title ? '<h3 class="organizers__title fs-51@ls fs-32 b-title mb-50 mt-0 color-red">'.$title.'</h3>' : ''; ?>
