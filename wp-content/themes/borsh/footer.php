@@ -19,14 +19,14 @@ $logos = get_field('footer_logos');
                                 </div>
                             <?php endif; ?>
 
-                            <?= $title ? '<p class="footer__title mw-300 w-100 fw-700 fs-36 b-lh-2 color-chamois d-inlineb">'.$title.'</p>' : ''; ?>
+                            <?= $title ? '<p class="footer__title mw-300 w-100 fw-700 fs-36 b-lh-2 color-chamois d-inlineb m-0">'.$title.'</p>' : ''; ?>
                         </div>
                     <?php endif; ?>
 
                     <?php if ($date || $address) : ?>
                         <div class="footer__info w-100 mw-320">
                             <?= $date ? '<p class="footer__date mb-20 color-white">'.$date.'</p>' : ''; ?>
-                            <?= $address ? '<p class="footer__address color-white">'.$address.'</p>' : ''; ?>
+                            <?= $address ? '<p class="footer__address color-white m-0">'.$address.'</p>' : ''; ?>
                         </div>
                     <?php endif; ?>
                 </div>
