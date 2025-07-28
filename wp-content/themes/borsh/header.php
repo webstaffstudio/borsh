@@ -13,13 +13,16 @@
 $sticky_header_text = get_field('sticky_header_text');
 ?>
 <div id="page" class="site-page">
-    <header id="masthead" class="site-header bg-body-tertiary">
-        <div class="container">
-            <?php if ($sticky_header_text): ?>
-                <p class="m-0"><a href="<?php echo $sticky_header_text['url']; ?>"><?php echo $sticky_header_text['title']; ?></a>
-                </p>
-            <?php endif; ?>
+    <header id="masthead" class="site-header header bg-body-tertiary">
+        <div class="container overflow-hidden">
+            <a class="header-link" href="<?php echo $sticky_header_text['url']; ?>"></a>
+            <div class="run-labels-wrapper">
+                <div class="run-labels-track">
+                    <?php for ($i = 0; $i < 20; $i++): ?>
+                    <span class="run-label"><?php echo $sticky_header_text['title']; ?></span>
+                    <?php endfor; ?>
+                </div>
+            </div>
         </div>
     </header>
-
     <div id="content" class="site-content">

@@ -1,4 +1,9 @@
 .for-whom {
+  &__title {
+    @include mq(0, 767){
+      text-align: center;
+    }
+  }
   &__content {
     @media (max-width: 768px) {
       justify-content: center;
@@ -6,12 +11,21 @@
     }
   }
 
+  &__left {
+    h4 {
+      font-size: 30px;
+    }
+  }
+
   &__right {
     max-width: 49%;
     width: 100%;
-
     @media (max-width: 1200px) {
       max-width: fit-content;
+    }
+
+    h4 {
+      font-size: 30px;
     }
   }
 

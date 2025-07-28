@@ -24,7 +24,7 @@ $current_class = $color_classes[$index % count($color_classes)];
             <?php
             echo wp_get_attachment_image(
                 $slide['photo'],
-                'slider_image',
+                'slider_image_speakers',
                 false,
                 [
                     'alt' => $slide['photo']['alt'] ?? $slide['photo']['title'],

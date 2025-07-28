@@ -9,7 +9,7 @@
 
 
 $img = get_field('image');
-$src_img = $img['sizes']['large'];
+$src_img = $img['sizes']['2048x2048'];
 $src_filter = get_stylesheet_directory_uri() . '/assets/src/img/bg-poster.svg';
 $style = !$img['url'] ? 'style="height: auto"' : '';
 $align = !$img['url'] ? 'style="display:flex;justify-content: center;text-align:center"' : '';
@@ -26,7 +26,7 @@ if ($text || $img) : ?>
         <?php if ($text) : ?>
             <div class="poster__container container py-40" <?= $align; ?>>
                 <div class="poster__wrapper mw-565 w-100">
-                    <h3 class="text-medium text-upper color-blue fs-36@ls fs-26 fw-400 m-0"><?= $text; ?></h3>
+                    <h3 class="text-medium text-upper color-blue fs-30@ls fs-26 fw-400 m-0"><?= $text; ?></h3>
                 </div>
             </div>
         <?php endif; ?>

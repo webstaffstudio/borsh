@@ -24,7 +24,7 @@ if ($title || $title_list_left || $title_list_right || $list_left || $list_right
                     <div class="for-whom__content mb-30 d-flex jc-sb gap-50">
                         <?php if ($title_list_left || $list_left) : ?>
                             <div class="for-whom__left">
-                                <?= $title_list_left ? '<h4 class="color-chamois text-medium mt-0 mb-70@lg mb-20">'.$title_list_left.'</h4>' : ''; ?>
+                                <?= $title_list_left ? '<h4 class="color-chamois text-medium  mt-0 mb-70@lg mb-20">'.$title_list_left.'</h4>' : ''; ?>
 
                                 <ul class="for-whom__list color-white">
                                     <?php foreach ($list_left as $item) :
@@ -48,7 +48,7 @@ if ($title || $title_list_left || $title_list_right || $list_left || $list_right
                     </div>
                 <?php endif; ?>
 
-                <?= $text_bottom ? '<p class="color-chamois mw-650 m-0 fs-36@ls fs-26 b-lh-1">'.$text_bottom.'</p>' : ''; ?>
+                <?= $text_bottom ? '<p class="color-chamois mw-650 m-0 30@ls fs-26 b-lh-1">'.$text_bottom.'</p>' : ''; ?>
             </div>
         </div>
     </section>

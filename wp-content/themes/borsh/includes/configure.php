@@ -54,13 +54,14 @@ function custom_setup() {
     remove_filter('render_block', 'wp_render_layout_support_flag');
 
 	// Remove useless WP image sizes
-	remove_image_size( '1536x1536' );
-	remove_image_size( '2048x2048' );
+//	remove_image_size( '1536x1536' );
+//	remove_image_size( '2048x2048' );
 
 	// Custom image sizes
 	// add_image_size( '424x424', 424, 424, true );
 	// add_image_size( '1920', 1920, 9999 );
-	add_image_size( 'slider_image', 299, 266, true );
+	add_image_size( 'slider_image_speakers', 399, 366, true );
+	add_image_size( 'slider_image', 499, 477, true );
 }
 add_action('after_setup_theme', 'custom_setup');
 
