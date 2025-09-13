@@ -1,0 +1,47 @@
+main {
+  overflow: hidden;
+}
+.page {
+  .page-nav {
+    background-color: $blue;
+    min-height: 87px;
+    display: flex;
+    align-items: center;
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .b-btn {
+      font-weight: 600;
+      color: $blue;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &__arrow {
+      a {
+        svg path {
+          transition: 0.3s ease-in-out;
+        }
+
+        &:hover {
+          svg {
+            path {
+              fill: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .page-content {
+    padding: 40px 0;
+
+  }
+}

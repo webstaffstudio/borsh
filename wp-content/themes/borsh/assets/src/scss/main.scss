@@ -9,6 +9,9 @@
 @import "base/header";
 @import "base/footer";
 
+// Default page
+@import "page";
+
 //layouts blocks
 @import "blocks/welcome";
 @import "blocks/about";
@@ -19,3 +22,7 @@
 @import "blocks/organizers";
 @import "blocks/ticket";
 @import "blocks/sliders";
+@import "blocks/donate-info";
+@import "blocks/cta-img-converter";
+@import "blocks/hero-img";
+@import "blocks/img-converter";

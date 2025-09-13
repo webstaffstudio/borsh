@@ -57,7 +57,7 @@ $footer_title = get_field('overview_footer_text_title');
                     </div>
                     <div class="counters-row__counter c2">
                         <div class="img-counter">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/counters/c-2.svg"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/src/img/counters/c-3v2.svg"
                                  alt="c-2">
                         </div>
                         <?php echo ($counter_2) ? '<span>' . $counter_2 . '</span>' : ''; ?>

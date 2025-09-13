@@ -41,26 +41,53 @@
 
 .slider {
   padding: 60px 0 150px;
-  background-color: $chamois;
   overflow: hidden;
   @include mq(0, 991) {
     padding-bottom: 60px;
   }
 
   &--speakers {
-    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 1183px auto;
+    background-position: center 160px;
+    @include mq(0, 1199) {
+      background-size: 960px auto;
+
+    }
+    @include mq(0, 991) {
+      background-size: 800px auto;
+    }
+    @include mq(0, 767) {
+      background-image: none !important;
+    }
 
     .b-title {
-      color: $purple;
+      color: $blue;
       text-align: left;
+    }
+
+    .slider__header {
+      @include minw(992) {
+        margin-bottom: 118px;
+      }
     }
 
   }
 
   &--activities {
+    background-color: $chamois;
+
     .b-title {
       color: $blue;
+      @include mq(0, 600) {
+        font-size: 26px;
+      }
     }
+
+    .swiper-slide {
+      background-color: $blue;
+    }
+
     .slider__slide-title {
       color: $blue;
       margin-bottom: 32px;
@@ -130,9 +157,9 @@
   &__swiper {
     width: 100%;
     overflow: hidden;
-    @include mq(0, 991) {
-      overflow: visible;
-    }
+    //@include mq(0, 991) {
+    //  overflow: visible;
+    //}
   }
 
   &__slide {
@@ -141,9 +168,9 @@
     flex-direction: column;
     border-radius: 30px;
     overflow: hidden;
-    @include mq(0, 991) {
-      width: 266px !important;
-    }
+    //@include mq(0, 991) {
+    //  width: 310px !important;
+    //}
 
     .slide-text {
       color: #fff;
@@ -161,31 +188,28 @@
         white-space: normal;
         word-break: break-word;
         overflow-wrap: break-word;
+        color: #fff;
+      }
+
+      .slider__slide-description {
+        color: #fff;
       }
     }
 
     &--purple {
-      .slide-text {
-        background-color: $purple;
-      }
+      background-color: $purple;
     }
 
     &--blue {
-      .slide-text {
-        background-color: $blue;
-      }
+      background-color: $blue;
     }
 
     &--green {
-      .slide-text {
-        background-color: $green;
-      }
+      background-color: $green;
     }
 
     &--red {
-      .slide-text {
-        background-color: $red;
-      }
+      background-color: $red;
     }
 
     @media (max-width: 767px) {
@@ -196,11 +220,17 @@
   &__image {
     width: 100%;
     height: 266px;
+    @include mq(420, 549) {
+      height: 370px;
+    }
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
+      padding: 8.6px;
+      border-radius: 30px;
     }
   }
 

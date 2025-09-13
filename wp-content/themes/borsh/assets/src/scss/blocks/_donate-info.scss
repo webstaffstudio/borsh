@@ -1,0 +1,45 @@
+.donate-info {
+  background-color: #000;
+  padding: 60px 0;
+  margin-bottom: 60px;
+  @include mq(0, 767) {
+    margin-bottom: 40px;
+  }
+&__image {
+  @include mq(0, 991) {
+    margin-bottom: 40px;
+  }
+  img {
+    margin-bottom: 27px;
+    max-width: 285px;
+    width: 100%;
+  }
+  &-text {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 380px;
+    width: 100%;
+  }
+}
+  &__description {
+    &-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 20px;
+
+      img {
+        max-width: 204px;
+        width: 100%;
+        height: auto;
+        flex: 1 1 calc(33.333% - 20px);
+        object-fit: contain;
+      }
+    }
+    &-text {
+      color: $chamois;
+    }
+  }
+}

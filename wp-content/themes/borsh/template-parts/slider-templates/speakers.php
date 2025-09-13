@@ -14,8 +14,9 @@ $color_classes = [
     'slider__slide--red',
 ];
 
-// Очікується, що в шаблон передано $index (індекс ітерації)
+
 $current_class = $color_classes[$index % count($color_classes)];
+
 ?>
 
 <div class="swiper-slide slider__slide <?php echo $current_class; ?>">
@@ -24,7 +25,7 @@ $current_class = $color_classes[$index % count($color_classes)];
             <?php
             echo wp_get_attachment_image(
                 $slide['photo'],
-                'slider_image',
+                'slider_image_speakers',
                 false,
                 [
                     'alt' => $slide['photo']['alt'] ?? $slide['photo']['title'],

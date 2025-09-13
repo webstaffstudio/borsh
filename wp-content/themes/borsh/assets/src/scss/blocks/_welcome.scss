@@ -6,6 +6,7 @@
   font-weight: bold;
   position: relative;
   overflow: hidden;
+
   @include mq(0, 767) {
     padding: 53px 0;
     height: auto;
@@ -25,6 +26,8 @@
     height: 100%;
     position: relative;
     z-index: 2;
+    pointer-events: none; // for svg hover animations
+
     @include mq(0, 767) {
       flex-direction: column-reverse;
       justify-content: end;
@@ -44,6 +47,7 @@
     gap: 26px;
     width: 100%;
     align-items: end;
+    pointer-events: auto;
 
     img {
       max-width: 150px;
@@ -53,6 +57,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       margin-bottom: 27px;
+
       img {
         margin-bottom: 10px;
       }
@@ -65,6 +70,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+
     @include mq(0, 767) {
       align-items: baseline;
       flex-direction: column-reverse;
@@ -82,11 +88,15 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 35px;
+    margin-bottom: 65px;
     margin-right: 80px;
+    pointer-events: auto;
+
     @include mq(0, 1399) {
       margin-right: 34px;
+      margin-bottom: 35px;
     }
+
     @include mq(0, 991) {
       margin-right: 0;
     }
@@ -103,9 +113,11 @@
       font-size: 36px;
       margin-top: 0;
       margin-bottom: 27px;
+
       @include mq(0, 1199) {
         font-size: 27px;
       }
+
       @include mq(0, 767) {
         margin-bottom: 20px;
       }
@@ -114,6 +126,7 @@
 
   &__logo-bottom {
     max-width: 150px;
+
     @include mq(0, 767) {
       display: none;
     }
@@ -128,15 +141,19 @@
     z-index: 1;
     max-width: 1090px;
     width: 100%;
+
     @include mq(0, 1399) {
       max-width: 950px;
     }
+
     @include mq(0, 1199) {
       max-width: 790px;
     }
+
     @include mq(0, 991) {
       max-width: 640px;
     }
+
     @include mq(0, 767) {
       width: 2000px;
       max-width: initial;
@@ -144,20 +161,23 @@
       transform: translate(85%, -87%);
     }
 
-    $vega_anim: 1.4s ease-in-out;
+    $vega_anim: 1s ease-in-out;
 
     &__desktop {
       display: flex;
+
       @include mq(0, 767) {
         display: none;
       }
 
       svg.frag {
         position: absolute;
+
         @include mq(0, 1399) {
           max-width: 40px;
           width: 100%;
         }
+
         @include mq(0, 1199) {
           max-width: 33px;
           width: 100%;
@@ -166,10 +186,12 @@
         &.frag-1 {
           bottom: -200px;
           left: -200px;
+          z-index: 2;
         }
 
         &.frag-2 {
           top: -300px;
+          z-index: 2;
         }
 
         &.frag-3 {
@@ -181,6 +203,14 @@
       svg {
         position: relative;
         transition: $vega_anim;
+        will-change:  transform;
+        cursor: pointer;
+        //overflow: visible;
+
+        & > path {
+          will-change: transform;
+        }
+
 
         //BEFORE ANIMATION
 
@@ -216,14 +246,17 @@
           &.letter-2 {
             right: 44px;
             bottom: 36px;
+
             @include mq(0, 1399) {
               right: 39px;
               bottom: 42px;
             }
+
             @include mq(0, 1199) {
               right: 33px;
               bottom: 51px;
             }
+
             @include mq(0, 991) {
               right: 25px;
             }
@@ -232,14 +265,17 @@
           &.letter-3 {
             top: 186px;
             right: 130px;
+
             @include mq(0, 1399) {
               top: 178px;
               right: 118px;
             }
+
             @include mq(0, 1199) {
               top: 161px;
               right: 106px;
             }
+
             @include mq(0, 991) {
               top: 130px;
               right: 92px;
@@ -249,6 +285,7 @@
           &.letter-4 {
             right: 171px;
             bottom: 14px;
+
             @include mq(0, 991) {
               right: 156px;
               bottom: 23px;
@@ -258,6 +295,7 @@
 
         svg.frag {
           position: absolute;
+
           @include mq(0, 767) {
             display: none;
           }
@@ -275,9 +313,11 @@
           &.frag-3 {
             bottom: 70px;
             right: 143px;
+
             @include mq(0, 1199) {
               right: 178px;
             }
+
             @include mq(0, 991) {
               right: 200px;
             }
@@ -290,6 +330,7 @@
       @include minw(768) {
         display: none;
       }
+
       position: relative;
       max-width: 640px;
       width: 100%;

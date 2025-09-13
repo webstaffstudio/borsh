@@ -1,0 +1,160 @@
+.generate-img {
+  .swiper-wrapper {
+    padding: 0;
+
+    @include mq(0, 768) {
+      padding: 120px 0 70px;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+
+    @include mq(0, 768) {
+      display: flex;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -5px;
+  }
+
+  .swiper-button-next {
+    right: -5px;
+  }
+
+  .option {
+    min-width: 188px;
+
+    @include mq(0, 768) {
+      width: 100% !important;
+    }
+  }
+
+  .option:nth-child(1) .option-wrap {
+    background: url("../img/mask-generate/group-mask-1.png"), linear-gradient(to right, transparent 2%, #D9D9D9  2%);
+
+    &::before {
+      background-image: url("../img/mask-generate/beetroot.png");
+      width: 143%;
+      height: 117.74%;
+      top: -100px;
+      left: -81px;
+    }
+  }
+
+  .option:nth-child(1).active {
+    .option-wrap {
+      background: url("../img/mask-generate/group-mask-1.png"), linear-gradient(to right, transparent 2%, black  2%);
+    }
+  }
+
+  .option:nth-child(2) .option-wrap {
+    background: url("../img/mask-generate/group-mask-2.png"), linear-gradient(to right, transparent 2%, #D9D9D9  2%);
+
+    &::before {
+      background-image: url("../img/mask-generate/cabboge.png");
+      width: 120%;
+      height: 66%;
+      bottom: -68px;
+      left: -53px;
+    }
+  }
+
+  .option:nth-child(2).active {
+    .option-wrap {
+      background: url("../img/mask-generate/group-mask-2.png"), linear-gradient(to right, transparent 2%, black  2%);
+    }
+  }
+
+  .option:nth-child(3) .option-wrap {
+    background: url("../img/mask-generate/group-mask-3.png"), linear-gradient(to right, transparent 2%, #D9D9D9  2%);
+
+    &::before {
+      background-image: url("../img/mask-generate/carrot.png");
+      width: 142%;
+      height: 147.66%;
+      top: -116px;
+      right: -156px;
+    }
+  }
+
+  .option:nth-child(3).active {
+    .option-wrap {
+      background: url("../img/mask-generate/group-mask-3.png"), linear-gradient(to right, transparent 2%, black  2%);
+    }
+  }
+
+  .option-wrap {
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    max-width: 188px;
+    width: 100%;
+    aspect-ratio: 1 / 1.884;
+    background-color: #D9D9D9;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:before {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: block;
+      content: '';
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    img {
+      max-width: 184px;
+      width: 100%;
+      display: block;
+      opacity: 0;
+    }
+  }
+
+  canvas {
+    display: block;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  &__btn {
+    cursor: pointer;
+  }
+
+  &__file[disabled] + label {
+    cursor: not-allowed;
+    opacity: 0.6;
+    position: relative;
+    transition: all .3s ease-in-out;
+  }
+
+  input[disabled] + label::before {
+    content: "Виберіть інгредієнт, щоб завантажити фото";
+    display: none;
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    transition: all .3s ease-in-out;
+  }
+
+  input[disabled] + label:hover {
+    &::before {
+      display: block;
+    }
+  }
+}

@@ -1,42 +1,57 @@
 <?php
-$logo = get_field('footer_logo');
-$title = get_field('footer_text');
-$date = get_field('footer_date_time');
+$logo    = get_field('footer_logo');
+$title   = get_field('footer_text');
+$date    = get_field('footer_date_time');
 $address = get_field('footer_address');
-$logos = get_field('footer_logos');
+$logos   = get_field('footer_logos');
+
+$has_footer_content = (
+    (!empty($logo['url'])) ||
+    (!empty($title)) ||
+    (!empty($date)) ||
+    (!empty($address)) ||
+    (!empty($logos) && is_array($logos) && count(array_filter($logos, function ($logo_item) {
+            return isset($logo_item['image']) && is_array($logo_item['image']) && !empty($logo_item['image']);
+        })) > 0) ||
+    has_nav_menu('menu-footer')
+);
 ?>
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer id="footer" class="footer">
+<?php if ($has_footer_content): ?>
+    <footer id="footer" class="footer">
         <div class="footer__wrapper">
-            <div class="footer__top py-50 bg-blue">
-                <div class="container d-flex jc-sb fw-wrap gap-50">
-                    <?php if ($logo['url'] || $title) : ?>
-                        <div class="footer__logo d-flex fw-wrap gap-50">
-                            <?php if ($logo['url']) : ?>
-                                <div class="footer__wrap w-100 mw-369">
-                                    <img src="<?= $logo['sizes']['large']; ?>" alt="<?= $logo['alt']; ?>" loading="lazy">
-                                </div>
-                            <?php endif; ?>
+            <?php if ($logo['url'] || $title || $date || $address): ?>
+                <div class="footer__top py-50 bg-blue">
+                    <div class="container d-flex jc-sb fw-wrap gap-50">
+                        <?php if ($logo['url'] || $title): ?>
+                            <div class="footer__logo d-flex fw-wrap gap-50">
+                                <?php if ($logo['url']): ?>
+                                    <div class="footer__wrap w-100 mw-369">
+                                        <img src="<?= $logo['sizes']['large']; ?>" alt="<?= $logo['alt']; ?>" loading="lazy">
+                                    </div>
+                                <?php endif; ?>
+                                <?= $title ? '<p class="footer__title mw-300 w-100 fw-700 fs-36 b-lh-2 color-chamois d-inlineb m-0">' . $title . '</p>' : ''; ?>
+                            </div>
+                        <?php endif; ?>
 
-                            <?= $title ? '<p class="footer__title mw-300 w-100 fw-700 fs-36 b-lh-2 color-chamois d-inlineb m-0">'.$title.'</p>' : ''; ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <?php if ($date || $address) : ?>
-                        <div class="footer__info w-100 mw-320">
-                            <?= $date ? '<p class="footer__date mb-20 color-white">'.$date.'</p>' : ''; ?>
-                            <?= $address ? '<p class="footer__address color-white m-0">'.$address.'</p>' : ''; ?>
-                        </div>
-                    <?php endif; ?>
+                        <?php if ($date || $address): ?>
+                            <div class="footer__info w-100 mw-320">
+                                <?= $date ? '<p class="footer__date mb-20 color-white">' . $date . '</p>' : ''; ?>
+                                <?= $address ? '<p class="footer__address color-white m-0">' . $address . '</p>' : ''; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
 
-            <?php if ( !empty($logos) && is_array($logos) && count(array_filter($logos, function($logo) { return isset($logo['image']) && is_array($logo['image']) && !empty($logo['image']); })) > 0 ) : ?>
+            <?php if (!empty($logos) && is_array($logos) && count(array_filter($logos, function ($logo_item) {
+                    return isset($logo_item['image']) && is_array($logo_item['image']) && !empty($logo_item['image']);
+                })) > 0): ?>
                 <div class="footer__bot bg-white py-20">
-                    <div class="container d-flex jc-se gap-20 fw-wrap">
+                    <div class="container d-flex jc-se gap-20">
                         <?php foreach ($logos as $item):
-                            $img = $item['image'];
+                            $img     = $item['image'];
                             $img_url = $img['sizes']['large'] ?? '';
                             $img_alt = $img['alt'] ?? $img['title'] ?? '';
                             if ($img_url): ?>
@@ -47,7 +62,18 @@ $logos = get_field('footer_logos');
                 </div>
             <?php endif; ?>
         </div>
-	</footer><!-- #colophon -->
+
+        <?php if (has_nav_menu('menu-footer')): ?>
+            <div class="footer__menu">
+                <div class="container">
+                    <nav class="footer-menu__nav">
+                        <?php wp_nav_menu(array('theme_location' => 'menu-footer')); ?>
+                    </nav>
+                </div>
+            </div>
+        <?php endif; ?>
+    </footer><!-- #colophon -->
+<?php endif; ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Block Name: Квитки
- * Description: A customizable block for displaying welcome slider section with a background, title, description, and optional button.
+ * Description: A customizable block for displaying ticket.
  * Icon: tickets-alt
  * Keywords: welcome, intro, section
  * Supports: {"align":true,"mode":false,"multiple":true}
@@ -17,10 +17,10 @@ $tickets = get_field('tickets');
 $link = get_field('link');
 
 if ($title || $list || $price || $old_price || $donate|| $next_price || $tickets || $link) : ?>
-    <section id="ticket" class="ticket bg-blue pt-250 pb-160"
+    <section class="ticket bg-blue pt-250 pb-160"
              style="background-image: url('<?= get_stylesheet_directory_uri(); ?>/assets/src/img/bg-ticket.svg')">
         <div class="ticket__container">
-            <div class="ticket__wrapper px-20">
+            <div id="ticket" class="ticket__wrapper px-20">
                 <?php if ($title || $list || $price || $old_price) : ?>
                     <div class="ticket__top mw-435 mx-auto radius-10 p-40@ls py-40 px-20 d-flex fd-c ai-c"
                          style="background-image: url('<?= get_stylesheet_directory_uri(); ?>/assets/src/img/bg-ticket-top.svg')">

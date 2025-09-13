@@ -1,0 +1,76 @@
+.cta-img-converter {
+  background-color: #5F5BDF;
+
+  &__wrapper {
+    @include mq(0, 991) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__left-img {
+    max-width: 240px;
+    min-width: 230px;
+
+    @include mq(0, 991) {
+      padding-top: 40px;
+    }
+  }
+
+  &__content {
+    @include mq(0, 768) {
+      padding: 40px 0;
+      flex-wrap: wrap-reverse;
+    }
+
+    @include mq(0, 450) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__img-title {
+    max-width: 261px;
+    min-width: 260px;
+
+    @include mq(0, 991) {
+      min-width: 220px;
+    }
+
+    @include mq(0, 768) {
+      max-width: 170px;
+      min-width: 170px;
+      margin-top: -65px;
+    }
+
+    @include mq(0, 450) {
+      margin: 0 auto 20px;
+    }
+  }
+
+  &__text {
+    margin-left: -30px;
+
+    @include mq(0, 768) {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    @include mq(0, 991) {
+      margin-bottom: 15px;
+    }
+
+    @include mq(0, 768) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    &:hover {
+      color: $purple;
+      background-color: $white;
+    }
+  }
+}
